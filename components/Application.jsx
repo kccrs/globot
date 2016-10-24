@@ -13,9 +13,10 @@ export default class Application extends Component {
     return (
       <div className="Application">
         <section className="titles">
-          <h1>Glowbot the Robot</h1>
+          <h1>Glowbot</h1>
           <h2>Adventures in Space</h2>
         </section>
+        <button className="start-button">Start</button>
       </div>
     );
   }
