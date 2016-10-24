@@ -8,6 +8,19 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat url('/../images/space.svg');
+  background-size: cover;
+}
+
 h1 {
-  color: orange;
+  color: white;
+  font-size: 40px;
+}
+
+h2 {
+  color: white;
+  font-size: 30px;
 }
