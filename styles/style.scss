@@ -9,16 +9,18 @@ html {
 }
 
 body {
-  background: no-repeat url('/../images/space.png');
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat url('/../images/space.svg');
   background-size: cover;
 }
 
 h1 {
-  color: yellow;
+  color: white;
   font-size: 40px;
 }
 
 h2 {
-  color: yellow;
+  color: white;
   font-size: 30px;
 }
