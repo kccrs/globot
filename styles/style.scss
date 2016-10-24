@@ -16,12 +16,24 @@ body {
   background-size: cover;
 }
 
+.titles {
+  background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
+  margin: 0 auto;
+  margin-top: 40vh;
+  width: 50vw;
+}
+
 h1 {
-  color: white;
-  font-size: 40px;
+  color: lighten($color-space, 40);
+  font-size: 60px;
+  text-align: center;
+  padding: 20px 0;
+
 }
 
 h2 {
-  color: white;
-  font-size: 30px;
+  color: lighten($color-space, 60);
+  font-size: 45px;
+  padding: 20px 0;
+  text-align: center;
 }

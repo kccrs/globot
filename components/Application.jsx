@@ -12,8 +12,10 @@ export default class Application extends Component {
   render() {
     return (
       <div className="Application">
-        <h1>Glowbot the Robot</h1>
-        <h2>Adventures in Space</h2>
+        <section className="titles">
+          <h1>Glowbot the Robot</h1>
+          <h2>Adventures in Space</h2>
+        </section>
       </div>
     );
   }
