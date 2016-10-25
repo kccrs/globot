@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Buttons from './Buttons';
+
 export default class Application extends Component {
   constructor() {
     super();
@@ -16,7 +18,7 @@ export default class Application extends Component {
           <h1>Glowbot</h1>
           <h2>Adventures in Space</h2>
         </section>
-        <button className="start-button">Start</button>
+        <Buttons className="start-button" text="Start"/>
       </div>
     );
   }
