@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import { assert, expect } from 'chai';
+import { shallow, mount } from 'enzyme';
+import { assert } from 'chai';
 
 import Application from '../components/Application';
 
@@ -13,21 +13,20 @@ describe('Application', () => {
       assert.equal(wrapper.type(), 'div');
     });
 
-  });
-
-  context('mount tests', () => {
-    const wrapper = mount(<Application />);
-
     it('has an onStart Button component', () => {
       assert.lengthOf(wrapper.find('Buttons'), 1);
     });
+  });
+
+  context('mount tests', () => {
+    // const wrapper = mount(<Application />);
+
 
     // it('should call the Start prop when clicked', () => {
-    //   const onStartMock = jest.fn();
     //   const button = mount(
     //     <Buttons
     //       text="Start"
-    //       onStart={onStartMock}
+    //       handleClick={startStory}
     //     />
     //   );
     // });

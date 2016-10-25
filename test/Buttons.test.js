@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { assert, expect } from 'chai';
+import sinon from 'sinon';
 
 import Buttons from '../components/Buttons';
 
@@ -16,10 +17,19 @@ describe('Buttons', () => {
       assert.isDefined(button.props('className'));
       assert.isDefined(button.props('handleClick'));
     });
+    //
+    // it('should activate startStory on click', () => {
+    //   button.simulate('click');
+    //   expect(button.state('startStory')).to.be.true;
+    // });
   });
 
   context('mount tests', () => {
-
+    // it() {
+    //   simulate.click(button);
+    //   assert(handleClick).wasCalled();
+    //   assert(window.location).equals('/page-2');
+    // }
   });
 
 });
