@@ -6,8 +6,16 @@ import sinon from 'sinon';
 import Buttons from '../components/Buttons';
 
 describe('Buttons', () => {
+  // const buttonProps = {
+  //   className: 'spying',
+  //   text: 'words',
+  //   handleClick: spy()
+  // };
+
+
   context('shallow tests', () => {
-    const button = shallow(<Buttons />);
+    const onClickStub = sinon.spy();
+    const button = shallow(<Buttons onClick={onClickStub}/>);
 
     it('renders as a <button>', () => {
       assert.equal(button.type(), 'button');
@@ -17,19 +25,25 @@ describe('Buttons', () => {
       assert.isDefined(button.props('className'));
       assert.isDefined(button.props('handleClick'));
     });
-    //
-    // it('should activate startStory on click', () => {
-    //   button.simulate('click');
-    //   expect(button.state('startStory')).to.be.true;
-    // });
+
+    it('should activate the onClick function on click', () => {
+      button.simulate('click');
+      assert.isFunction(onClickStub);
+    });
   });
 
-  context('mount tests', () => {
-    // it() {
-    //   simulate.click(button);
-    //   assert(handleClick).wasCalled();
-    //   assert(window.location).equals('/page-2');
-    // }
-  });
+  // context('mount tests', () => {
+  //   const button = mount(
+  //     <Buttons
+  //       text="Start"
+  //       handleClick={() => startStory()}
+  //     />
+  //   );
+  //
+  //   it('should activate the onClick function on click', () => {
+  //     button.simulate('click');
+  //     assert.wasCalled(startStory);
+  //   });
+  // });
 
 });

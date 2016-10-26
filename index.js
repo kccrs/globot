@@ -9,15 +9,11 @@ import Application from './components/Application';
 render ((
   <BrowserRouter history={browserHistory}>
     <Match exactly pattern="/" component={Application} />
-      
+
   </BrowserRouter>
   ), document.getElementById('application')
 );
 
 // <Match exactly pattern="/:page" component={Page}>
 
-  // page1: {
-  //   images: [
-  //     { url: euhgaoreg, title: ueshrgousehg, top: 50px, left: 250px }
-  //   ]
-  // }
+  

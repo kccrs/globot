@@ -8,3 +8,9 @@
 // //
 // // import { page1Photos } from '/photos.js'
 //
+
+// page1: {
+//   images: [
+//     { url: euhgaoreg, title: ueshrgousehg, top: 50px, left: 250px }
+//   ]
+// }

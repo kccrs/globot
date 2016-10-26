@@ -3,17 +3,12 @@ import React, { Component } from 'react';
 import Buttons from './Buttons';
 
 export default class Application extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     storyText: [],
-  //     images: [],
-  //   };
-  // }
-  // startStory() {
-  //   e.preventDefault();
-  //   this.context.router.transitionTo(/:page);
-  // }
+
+  startStory(e) {
+    e.preventDefault();
+    console.log('HEYYYYYYYY!');
+    // this.context.router.transitionTo(/:page);
+  }
 
   render() {
     return (
@@ -22,7 +17,7 @@ export default class Application extends Component {
           <h1>Glowbot</h1>
           <h2>Adventures in Space</h2>
         </section>
-        <Buttons className="start-button" handleClick={() => this.startStory()} text="Start"/>
+        <Buttons className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
       </div>
     );
   }
