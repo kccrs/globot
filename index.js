@@ -4,16 +4,14 @@ const { render } = require('react-dom');
 import { BrowserRouter, Match, Miss, browserHistory } from 'react-router';
 
 import Application from './components/Application';
-// import Page from './components/Page';
+import StoryPage from './components/StoryPage';
+import NotFound from './components/NotFound';
 
-render ((
+render (
   <BrowserRouter history={browserHistory}>
-    <Match exactly pattern="/" component={Application} />
-
-  </BrowserRouter>
-  ), document.getElementById('application')
-);
-
-// <Match exactly pattern="/:page" component={Page}>
-
-  
+    <div>
+      <Match exactly pattern="/" component={Application} />
+      <Match pattern="/:pageId" component={StoryPage} />
+      <Miss component={NotFound} />
+    </div>
+  </BrowserRouter>, document.getElementById('application'));

@@ -6,12 +6,6 @@ import sinon from 'sinon';
 import Buttons from '../components/Buttons';
 
 describe('Buttons', () => {
-  // const buttonProps = {
-  //   className: 'spying',
-  //   text: 'words',
-  //   handleClick: spy()
-  // };
-
 
   context('shallow tests', () => {
     const onClickStub = sinon.spy();
@@ -31,19 +25,4 @@ describe('Buttons', () => {
       assert.isFunction(onClickStub);
     });
   });
-
-  // context('mount tests', () => {
-  //   const button = mount(
-  //     <Buttons
-  //       text="Start"
-  //       handleClick={() => startStory()}
-  //     />
-  //   );
-  //
-  //   it('should activate the onClick function on click', () => {
-  //     button.simulate('click');
-  //     assert.wasCalled(startStory);
-  //   });
-  // });
-
 });
