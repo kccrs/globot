@@ -7,10 +7,16 @@ export default class StoryPage extends Component {
 
   getStoryText() {
     console.log('Here is some text');
+    return storyText.pageNum().text;
     // var pageId = this.context.router.params.pagename
     // assuming pageId === 'page1'
     // return storyText.pageId
     // storyText.page1
+  }
+
+  pageNum() {
+    var pageId = this.context.router.params.pageId;
+    return 'page' + pageId;
   }
 
   goToStoryPage(e) {
@@ -24,7 +30,7 @@ export default class StoryPage extends Component {
       <div className="StoryPage">
         <h1>Page title</h1>
         <section className="pageText">
-          {getStoryText()}
+          {this.getStoryText()}
         </section>
         <Buttons className="first-choice" handleClick={(e) => this.gotToStoryPage(e)} text="Choose"/>
       </div>

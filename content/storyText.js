@@ -1,16 +1,14 @@
-const storyText = [
-  {
-    pageId: 1,
-    text: "Scrbabble"
-  },
-  {
-    pageId: 2,
-    text: "more words"
-  }
-];
-// import text from "./text"
-//
-// {text.1}
-//
 
-module.exports = storyText;
+module.exports = {
+	page1: function() {
+		return {
+      text: "Hello this is page 1 text",
+      image1: "url....."
+    };
+
+	},
+
+	page2: function() {
+		return "Hello this is page 2 text";
+	}
+};

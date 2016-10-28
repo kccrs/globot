@@ -7,7 +7,7 @@ export default class Application extends Component {
   startStory(e) {
     e.preventDefault();
     console.log('HEYYYYYYYY!');
-    // this.context.router.transitionTo(/:pagenumber);
+    this.context.router.transitionTo('/1');
   }
 
   render() {
@@ -23,6 +23,6 @@ export default class Application extends Component {
   }
 }
 
-// Application.contextTypes = {
-//   router: React.PropTypes.object
-// }
+Application.contextTypes = {
+  router: React.PropTypes.object
+}
