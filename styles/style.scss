@@ -1,4 +1,5 @@
 @import '_reset';
+@import '_variables';
 
 html {
   box-sizing: border-box;
@@ -10,17 +11,50 @@ html {
 
 body {
   width: 100vw;
-  height: 100vh;
-  background: no-repeat url('/../images/space.svg');
+  min-height: 100%;
+  background: no-repeat url('/../content/images/space.svg');
   background-size: cover;
 }
 
+.titles {
+  background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 40vh;
+  width: 50vw;
+}
+
 h1 {
-  color: white;
-  font-size: 40px;
+  color: lighten($color-space, 40);
+  font-size: 60px;
+  text-align: center;
+  font-family: $font-home-page-secondary;
+  padding: 20px 0;
 }
 
 h2 {
-  color: white;
+  color: lighten($color-space, 60);
+  font-size: 40px;
+  font-family: $font-home-page;
+  letter-spacing: .1em;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.start-button {
+  background-color: lighten($color-space, 30);
+  border: none;
+  border-radius: 40px;
+  color: lighten($color-space, 65);
+  font-family: $font-home-page-secondary;
   font-size: 30px;
+  letter-spacing: .1em;
+  display: block;
+  height: 60px;
+  width: 120px;
+  margin: 50px auto;
+  &:hover {
+    background-color: lighten($color-space, 60);
+    color: lighten($color-space, 30);
+  }
 }
