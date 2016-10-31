@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
 import storyText from '../content/storyText';
-
-// structure the route so that it looks like /page1
+import Buttons from './Buttons';
 
 export default class StoryPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      // pageId: null,
+      // choices: null
+    };
+  }
 
   getStoryText() {
-    console.log('Here is some text');
     return storyText.pageNum().text;
-    // var pageId = this.context.router.params.pagename
-    // assuming pageId === 'page1'
+    console.log('Here is some text');
+    // var pageId = this.context.router.params.pageId
     // return storyText.pageId
     // storyText.page1
   }
 
   pageNum() {
     var pageId = this.context.router.params.pageId;
-    return 'page' + pageId;
+    return pageId;
   }
 
   goToStoryPage(e) {
     e.preventDefault();
-    // this.context.router.transitionTo(/:pagenumber);
+    this.context.router.transitionTo(`/${pageId}`);
     return console.log("what is happening?");
   }
 
   render () {
     return (
       <div className="StoryPage">
-        <h1>Page title</h1>
+        <h1>Hi</h1>
         <section className="pageText">
-          {this.getStoryText()}
         </section>
-        <Buttons className="first-choice" handleClick={(e) => this.gotToStoryPage(e)} text="Choose"/>
+        <section className="buttonArea">
+          <Buttons className="first-choice" handleClick={(e) => this.gotToStoryPage(e)} text="Choose A"/>
+          <Buttons className="second-choice" handleClick={(e) => this.goToSToryPage(e)} text="Choose B"/>
+        </section>
       </div>
     )
   }

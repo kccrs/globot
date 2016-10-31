@@ -17,7 +17,6 @@ describe('Application', () => {
 
     it('has an onStart Button component', () => {
       assert.lengthOf(wrapper.find('Buttons'), 1);
-      // expect(wrapper.contains(<Buttons />)).to.equal(true);
     });
 
   });
@@ -27,15 +26,9 @@ describe('Application', () => {
     const startButton = wrapper.find('button');
     const onStartStub = sinon.spy();
 
-      it('should activate the onClick function on click', () => {
-        startButton.simulate('click');
-      });
+    it('should activate the onClick function on click', () => {
+      startButton.simulate('click');
+      assert.isFunction(onStartStub);
     });
-    // it('should call the Start prop when clicked', () => {
-    //   const button = mount(<Buttons />);
-    //   );
-    // });
-  // });
-
-
+  });
 });
