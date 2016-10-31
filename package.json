@@ -4,7 +4,7 @@
   "description": "An interactive, choose-your-own-adventure style children's book built with React and using text-to-speech technology.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node server",
     "build": "webpack",
     "test": "mocha --compilers js:babel-register --require test/helpers/setup.js --recursive"
   },
@@ -18,6 +18,11 @@
     "url": "https://github.com/kccrs/glowbot/issues"
   },
   "homepage": "https://github.com/kccrs/glowbot#readme",
+  "dependencies": {
+    "react-dom": "^15.3.2",
+    "react-router": "^4.0.0-alpha.3",
+    "react": "^15.3.2"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
@@ -39,10 +44,7 @@
     "mocha-loader": "^1.0.0",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.10.1",
-    "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-router": "^4.0.0-alpha.3",
     "react-scripts": "0.6.1",
     "react-test-renderer": "^15.3.2",
     "sass-loader": "^4.0.2",
