@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import storyText from '../content/storyText';
 
-export default (props) => {
-  let story = props.pageText.map((p) => {
-    return
-      <p key={p.split(' ').join('').slice(0,10)} >
-        {p.slice(1)}
-      </p>
-  });
-
-  return (
-    <div>{story}</div>
-  );
-};
-
+export default class Text extends Component {
+  render () {
+    return(
+      <p>Some stuff here!</p>
+    );
+  }
+}
 
 //   getStoryText() {
 //     console.log('Here is some text');

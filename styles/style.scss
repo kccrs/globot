@@ -38,20 +38,44 @@ h2 {
   text-align: center;
 }
 
+.buttonArea {
+  display: flex;
+}
+
+button,
 .start-button {
   background-color: lighten($color-space, 30);
+  display: inline-block;
   border: none;
   border-radius: 40px;
   color: lighten($color-space, 65);
   font-family: $font-home-page-secondary;
   font-size: 30px;
   letter-spacing: .1em;
-  display: block;
   height: 60px;
-  width: 120px;
-  margin: 50px auto;
+  width: 170px;
+  margin: 40px auto;
   &:hover {
     background-color: lighten($color-space, 60);
     color: lighten($color-space, 30);
   }
+}
+
+.first-choice,
+.second-choice {
+  // width: 40%;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: green;
+  font-size: 36px;
+}
+
+.globot {
+  display: block;
+  height: auto;
+  width: 200px;
+  margin: 0 auto;
 }
