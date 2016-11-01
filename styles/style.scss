@@ -45,8 +45,7 @@ h2 {
   display: flex;
 }
 
-button,
-.start-button {
+button {
   background-color: lighten($color-space, 30);
   display: inline-block;
   border: none;
@@ -64,11 +63,6 @@ button,
   }
 }
 
-.first-choice,
-.second-choice {
-  // width: 40%;
-}
-
 p {
   text-align: center;
   margin-top: 20px;
@@ -81,4 +75,11 @@ p {
   height: auto;
   width: 200px;
   margin: 0 auto;
+}
+
+h3 {
+  color: lighten($color-space, 60);
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
 }

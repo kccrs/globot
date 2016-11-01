@@ -11,11 +11,16 @@ export default class StoryPage extends Component {
     this.context.router.transitionTo(`/${nextPage}`);
   }
 
+  startOver(e) {
+    e.preventDefault();
+    this.context.router.transitionTo('/page1');
+  }
+
   render () {
     let currentPage = this.props.params.pageId;
     return (
       <div className="StoryPage">
-        <h1>GloBot: Adventures in Space</h1>
+        <h3>GloBot: Adventures in Space</h3>
         <section className="pageText">
           <Image textKey={currentPage} />
           <Text textKey={currentPage} />
@@ -24,7 +29,10 @@ export default class StoryPage extends Component {
           <Buttons className="first-choice" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultA)} text="Choose A"/>
           <Buttons className="second-choice" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultB)} text="Choose B"/>
         </section>
-      </div>
+      <footer>
+          <Buttons className="start-over" handleClick={(e) => this.startOver(e)} text="Start Over" />
+      </footer>
+    </div>
     );
   };
 };

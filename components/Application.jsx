@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Buttons from './Buttons';
 
 export default class Application extends Component {
+
   startStory(e) {
     e.preventDefault();
     this.context.router.transitionTo('/page1');
@@ -14,7 +15,9 @@ export default class Application extends Component {
           <h1>GloBot</h1>
           <h2>Adventures in Space</h2>
         </section>
-        <Buttons className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
+        <section className="buttonArea">
+          <Buttons className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
+        </section>
       </div>
     );
   }
