@@ -3,8 +3,13 @@ import storyText from '../content/storyText';
 
 export default class Text extends Component {
   render () {
-    return(
-      <p>Some stuff here!</p>
+    // let currentPage = {storyText[0]};
+    // let currentText = currentPage.pageText;
+    return (
+      <section>
+        <p>Some stuff here!</p>
+        <p>{storyText[0].pageText}</p>
+      </section>
     );
   }
 }

@@ -31,10 +31,10 @@ export default class StoryPage extends Component {
         <h1>GloBot: Adventures in Space</h1>
         <section className="pageText">
           <Image />
-          <Text / >
+          <Text />
         </section>
         <section className="buttonArea">
-          <Buttons className="first-choice" hidden="true" handleClick={(e) => this.gotToStoryPage(e)} text="Choose A"/>
+          <Buttons className="first-choice" handleClick={(e) => this.gotToStoryPage(e)} text="Choose A"/>
           <Buttons className="second-choice" handleClick={(e) => this.goToStoryPage(e)} text="Choose B"/>
         </section>
       </div>
