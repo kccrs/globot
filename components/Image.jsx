@@ -4,10 +4,14 @@ import storyText from '../content/storyText';
 
 export default class Image extends Component {
   render () {
+    let pageId = this.props.textKey;
+
     return (
       <section className="imageArea">
         <p>
-          <img src={storyText[0].imageUrl} className={storyText[0].imageClassName} alt={storyText[0].imageAlt}/>
+          <img
+            src={storyText[pageId].imageUrl} className={storyText[pageId].imageClassName} alt={storyText[pageId].imageAlt}
+          />
         </p>
       </section>
     );
