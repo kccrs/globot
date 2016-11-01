@@ -3,7 +3,9 @@ const storyText = [
   {
     key: 'page1',
     pageText: 'Hello this is page 1 text',
-    image1: 'url.....',
+    imageUrl: "../content/images/globot.svg",
+    imageClassName: "globot",
+    imageAlt: "GloBot",  
     choices: ['a','b'],
     result: ['page2','page3']
   },
