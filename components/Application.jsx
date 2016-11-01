@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import storyText from '../content/storyText';
-
 import Buttons from './Buttons';
 
 export default class Application extends Component {
   startStory(e) {
     e.preventDefault();
-    console.log('HEYYYYYYYY!');
-    // let pageId = this.context.router.params.id;
-    // this.context.router.transitionTo(`/${pageId}`);
     this.context.router.transitionTo('/page1');
   }
 

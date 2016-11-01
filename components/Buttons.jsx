@@ -6,8 +6,10 @@ export default class Buttons extends Component {
     return (
       <button
         className={this.props.className}
+        onClick={this.props.handleClick}
         hidden={this.props.hidden}
-        onClick={this.props.handleClick}>
+        result={this.props.result}
+      >
         {this.props.text}
       </button>
     );

@@ -8191,24 +8191,17 @@
 
 	var _Application2 = _interopRequireDefault(_Application);
 
-	var _Image = __webpack_require__(508);
-
-	var _Image2 = _interopRequireDefault(_Image);
-
-	var _StoryPage = __webpack_require__(509);
+	var _StoryPage = __webpack_require__(507);
 
 	var _StoryPage2 = _interopRequireDefault(_StoryPage);
 
-	var _NotFound = __webpack_require__(510);
+	var _NotFound = __webpack_require__(511);
 
 	var _NotFound2 = _interopRequireDefault(_NotFound);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(511);
-
-	// import Text from './components/Text';
-	// import Buttons from './components/Buttons';
+	__webpack_require__(512);
 
 
 	var Root = function Root() {
@@ -8219,8 +8212,7 @@
 	      'div',
 	      null,
 	      _react2.default.createElement(_reactRouter.Match, { exactly: true, pattern: '/', component: _Application2.default }),
-	      _react2.default.createElement(_reactRouter.Match, { exactly: true, pattern: '/things', component: _Image2.default }),
-	      '// ',
+	      _react2.default.createElement(_reactRouter.Match, { pattern: '/:pageId', component: _StoryPage2.default }),
 	      _react2.default.createElement(_reactRouter.Miss, { component: _NotFound2.default })
 	    )
 	  );
@@ -32959,13 +32951,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(469);
-
-	var _storyText = __webpack_require__(506);
-
-	var _storyText2 = _interopRequireDefault(_storyText);
-
-	var _Buttons = __webpack_require__(507);
+	var _Buttons = __webpack_require__(506);
 
 	var _Buttons2 = _interopRequireDefault(_Buttons);
 
@@ -33036,37 +33022,6 @@
 
 /***/ },
 /* 506 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	var storyText = {
-
-	  page1: function page1() {
-	    return {
-	      id: 'page1',
-	      pageText: 'Hello this is page 1 text',
-	      image1: 'url.....',
-	      choices: ['a', 'b'],
-	      result: ['page2', 'page3']
-	    };
-	  },
-
-	  page2: function page2() {
-	    return {
-	      id: 'page2',
-	      pageText: 'Hello this is page 2 text',
-	      image1: 'url.....',
-	      choices: ['c', 'd'],
-	      result: ['page4', 'page5']
-	    };
-	  }
-	};
-
-	module.exports = storyText;
-
-/***/ },
-/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33128,39 +33083,7 @@
 	exports.default = Buttons;
 
 /***/ },
-/* 508 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(299);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// import images from './content/images';
-
-	var Image = function Image() {
-	  return _react2.default.createElement(
-	    'section',
-	    null,
-	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      'router is dumb'
-	    )
-	  );
-	};
-
-	exports.default = Image;
-
-/***/ },
-/* 509 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33175,7 +33098,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _storyText = __webpack_require__(506);
+	var _Buttons = __webpack_require__(506);
+
+	var _Buttons2 = _interopRequireDefault(_Buttons);
+
+	var _Text = __webpack_require__(508);
+
+	var _Text2 = _interopRequireDefault(_Text);
+
+	var _Image = __webpack_require__(510);
+
+	var _Image2 = _interopRequireDefault(_Image);
+
+	var _storyText = __webpack_require__(509);
 
 	var _storyText2 = _interopRequireDefault(_storyText);
 
@@ -33196,31 +33131,26 @@
 	    var _this = _possibleConstructorReturn(this, (StoryPage.__proto__ || Object.getPrototypeOf(StoryPage)).call(this));
 
 	    _this.state = {
-	      // pageId: null,
+	      pageId: _this.pageId
 	      // choices: null
 	    };
 	    return _this;
 	  }
 
 	  _createClass(StoryPage, [{
-	    key: 'getStoryText',
-	    value: function getStoryText() {
-	      return _storyText2.default.pageNum().text;
-	      console.log('Here is some text');
-	      // var pageId = this.context.router.params.pageId
-	      // return storyText.pageId
-	      // storyText.page1
-	    }
-	  }, {
-	    key: 'pageNum',
-	    value: function pageNum() {
-	      var pageId = this.context.router.params.pageId;
-	      return pageId;
+	    key: 'setPageNum',
+	    value: function setPageNum() {
+	      this.setState({
+	        pageId: this.context.router.storyText.key
+	      });
+	      // return pageId;
 	    }
 	  }, {
 	    key: 'goToStoryPage',
 	    value: function goToStoryPage(e) {
 	      e.preventDefault();
+	      this.setPageNum();
+	      // let pageId = this.context.router.storyText.key;
 	      this.context.router.transitionTo('/' + pageId);
 	      return console.log("what is happening?");
 	    }
@@ -33235,24 +33165,22 @@
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          'Hi'
+	          'GloBot: Adventures in Space'
 	        ),
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'pageText' },
-	          '// ',
-	          this.props.children
+	          _react2.default.createElement(_Image2.default, null),
+	          _react2.default.createElement(_Text2.default, null)
 	        ),
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'buttonArea' },
-	          '// ',
-	          this.props.children,
-	          _react2.default.createElement(Buttons, { className: 'first-choice', handleClick: function handleClick(e) {
+	          _react2.default.createElement(_Buttons2.default, { className: 'first-choice', handleClick: function handleClick(e) {
 	              return _this2.gotToStoryPage(e);
 	            }, text: 'Choose A' }),
-	          _react2.default.createElement(Buttons, { className: 'second-choice', handleClick: function handleClick(e) {
-	              return _this2.goToSToryPage(e);
+	          _react2.default.createElement(_Buttons2.default, { className: 'second-choice', handleClick: function handleClick(e) {
+	              return _this2.goToStoryPage(e);
 	            }, text: 'Choose B' })
 	        )
 	      );
@@ -33270,7 +33198,185 @@
 	};
 
 /***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _storyText = __webpack_require__(509);
+
+	var _storyText2 = _interopRequireDefault(_storyText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Text = function (_Component) {
+	  _inherits(Text, _Component);
+
+	  function Text() {
+	    _classCallCheck(this, Text);
+
+	    return _possibleConstructorReturn(this, (Text.__proto__ || Object.getPrototypeOf(Text)).apply(this, arguments));
+	  }
+
+	  _createClass(Text, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'story' },
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          _storyText2.default[1].pageText
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Text;
+	}(_react.Component);
+
+	//   getStoryText() {
+	//     console.log('Here is some text');
+	//     return storyText.pageNum().text;
+	//     // var pageId = this.context.router.params.pagename
+	//     // assuming pageId === 'page1'
+	//     // return storyText.pageId
+	//     // storyText.page1
+	//   }
+	//
+	//   // pageNum() {
+	//   //   var pageId = this.context.router.params.pageId;
+	//   //   return 'page' + pageId;
+	//   // }
+	//
+	//   render() {
+	//     return (
+	//       <section className="pageText">
+	//         {this.getStoryText()}
+	//         {this.props.children}
+	//       </section>
+	//     );
+	//   }
+	// }
+	//
+	// Text.contextTypes = {
+	//   router: React.PropTypes.object
+	// }
+
+
+	exports.default = Text;
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var storyText = [{
+	  key: 'page1',
+	  pageText: 'Hello this is page 1 text',
+	  imageUrl: '../content/images/globot.svg',
+	  imageClassName: 'globot',
+	  imageAlt: 'GloBot',
+	  choices: ['a', 'b'],
+	  result: ['page2', 'page3']
+	}, {
+	  key: 'page2',
+	  pageText: 'You are crushing it Cross!  Check out this kick ass janky robot!',
+	  imageUrl: '../content/images/janky-robot.svg',
+	  imageClassName: 'janky-robot',
+	  imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
+	  choices: ['c', 'd'],
+	  result: ['page4', 'page5']
+	}, {
+	  key: 'page3',
+	  pageText: 'Here is some junk for ya',
+	  imageUrl: '../content/images/saturn.svg',
+	  imageClassName: 'saturn',
+	  imageAlt: "a planet that resembles Saturn",
+	  choices: ['e', 'f'],
+	  result: ['page4', 'page5']
+	}];
+
+	module.exports = storyText;
+
+/***/ },
 /* 510 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _storyText = __webpack_require__(509);
+
+	var _storyText2 = _interopRequireDefault(_storyText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Image = function (_Component) {
+	  _inherits(Image, _Component);
+
+	  function Image() {
+	    _classCallCheck(this, Image);
+
+	    return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).apply(this, arguments));
+	  }
+
+	  _createClass(Image, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'section',
+	        { className: 'imageArea' },
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          _react2.default.createElement('img', { src: _storyText2.default[1].imageUrl, className: _storyText2.default[1].imageClassName, alt: _storyText2.default[1].imageAlt })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Image;
+	}(_react.Component);
+
+	exports.default = Image;
+
+/***/ },
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33300,16 +33406,16 @@
 	exports.default = NotFound;
 
 /***/ },
-/* 511 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(512);
+	var content = __webpack_require__(513);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(514)(content, {});
+	var update = __webpack_require__(515)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33326,22 +33432,22 @@
 	}
 
 /***/ },
-/* 512 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(513)();
+	exports = module.exports = __webpack_require__(514)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Orbitron:400,500);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%;\n  background: no-repeat url(\"/../content/images/space.svg\");\n  background-size: cover; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.start-button {\n  background-color: #7d449a;\n  border: none;\n  border-radius: 40px;\n  color: #cfb3de;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .1em;\n  display: block;\n  height: 60px;\n  width: 120px;\n  margin: 50px auto; }\n  .start-button:hover {\n    background-color: #c4a1d6;\n    color: #7d449a; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/saturn.jpg\"); }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonArea {\n  display: flex; }\n\nbutton,\n.start-button {\n  background-color: #7d449a;\n  display: inline-block;\n  border: none;\n  border-radius: 40px;\n  color: #cfb3de;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .1em;\n  height: 60px;\n  width: 170px;\n  margin: 40px auto; }\n  button:hover,\n  .start-button:hover {\n    background-color: #c4a1d6;\n    color: #7d449a; }\n\np {\n  text-align: center;\n  margin-top: 20px;\n  color: white;\n  font-size: 36px; }\n\n.globot {\n  display: block;\n  height: auto;\n  width: 200px;\n  margin: 0 auto; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 513 */
+/* 514 */
 /***/ function(module, exports) {
 
 	/*
@@ -33397,7 +33503,7 @@
 
 
 /***/ },
-/* 514 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
