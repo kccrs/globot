@@ -20,21 +20,21 @@ export default class StoryPage extends Component {
     let currentPage = this.props.params.pageId;
     return (
       <div className="StoryPage">
-        <h3>GloBot: Adventures in Space</h3>
         <section className="pageText">
           <Image textKey={currentPage} />
           <Text textKey={currentPage} />
         </section>
-        <nav className="buttonContainer">
-          <section className="first-choice">
-            <Buttons className="first-choice-button" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultA)} text="Choose A"/>
-          </section>
+        <footer>
+          <nav className="buttonContainer">
+            <section className="first-choice">
+              <Buttons className="first-choice-button" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultA)} text="Choose A"/>
+            </section>
             <section className="second-choice">
               <Buttons className="second-choice-button" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultB)} text="Choose B"/>
             </section>
-        </nav>
-        <footer>
+          </nav>
           <Buttons className="start-over" handleClick={(e) => this.startOver(e)} text="Start Over" />
+          <h3>GloBot</h3>
         </footer>
       </div>
     );

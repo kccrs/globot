@@ -1,6 +1,8 @@
 
 .StoryPage {
-  min-height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -11,35 +13,52 @@ p {
 }
 
 h3 {
-  color: lighten($color-space, 60);
+  color: $color-space;
   text-align: center;
-  font-size: 30px;
-  margin-top: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .pageText {
-  height: 55vh;
+  margin-top: 50px;
+  // height: 55vh;
 }
 
 .first-choice,
 .second-choice {
+  // height: 80px;
   width: 300px;
+  display: flex;
 }
 
 .second-choice-button {
-  display: none;
+  // display: none;
 }
 
 footer {
   position: absolute;
   bottom: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
 }
 
+nav,
+.first-choice,
+.second-choice {
+  height: 150px;
+}
+
+
 .start-over {
   background-color: transparentize(white, .70);
-  color: $color-space;
-  width: 200px;
+  color: saturate($color-space, 70);
+  font-size: 26px;
+  margin: 10px auto 20px;
+  width: 150px;
+  &:hover {
+    background-color: lighten($color-space, 65);
+    height: 52px;
+    width: 155px;
+  }
 }
