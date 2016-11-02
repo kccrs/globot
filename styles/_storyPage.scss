@@ -1,0 +1,45 @@
+
+.StoryPage {
+  min-height: 100vh;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+h3 {
+  color: lighten($color-space, 60);
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.pageText {
+  height: 55vh;
+}
+
+.first-choice,
+.second-choice {
+  width: 300px;
+}
+
+.second-choice-button {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.start-over {
+  background-color: transparentize(white, .70);
+  color: $color-space;
+  width: 200px;
+}

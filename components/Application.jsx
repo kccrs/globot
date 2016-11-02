@@ -15,7 +15,7 @@ export default class Application extends Component {
           <h1>GloBot</h1>
           <h2>Adventures in Space</h2>
         </section>
-        <section className="buttonArea">
+        <section className="buttonContainer">
           <Buttons className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
         </section>
       </div>

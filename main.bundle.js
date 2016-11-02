@@ -32976,9 +32976,6 @@
 	    key: 'startStory',
 	    value: function startStory(e) {
 	      e.preventDefault();
-	      console.log('HEYYYYYYYY!');
-	      // let pageId = this.context.router.params.id;
-	      // this.context.router.transitionTo(`/${pageId}`);
 	      this.context.router.transitionTo('/page1');
 	    }
 	  }, {
@@ -33003,9 +33000,13 @@
 	            'Adventures in Space'
 	          )
 	        ),
-	        _react2.default.createElement(_Buttons2.default, { className: 'start-button', handleClick: function handleClick(e) {
-	            return _this2.startStory(e);
-	          }, text: 'Start' })
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'buttonArea' },
+	          _react2.default.createElement(_Buttons2.default, { className: 'start-button', handleClick: function handleClick(e) {
+	              return _this2.startStory(e);
+	            }, text: 'Start' })
+	        )
 	      );
 	    }
 	  }]);
@@ -33062,8 +33063,9 @@
 	        'button',
 	        {
 	          className: this.props.className,
-	          hidden: this.props.hidden,
-	          onClick: this.props.handleClick },
+	          onClick: this.props.handleClick,
+	          result: this.props.result
+	        },
 	        this.props.text
 	      );
 	    }
@@ -33128,60 +33130,57 @@
 	  function StoryPage() {
 	    _classCallCheck(this, StoryPage);
 
-	    var _this = _possibleConstructorReturn(this, (StoryPage.__proto__ || Object.getPrototypeOf(StoryPage)).call(this));
-
-	    _this.state = {
-	      pageId: _this.pageId
-	      // choices: null
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (StoryPage.__proto__ || Object.getPrototypeOf(StoryPage)).apply(this, arguments));
 	  }
 
 	  _createClass(StoryPage, [{
-	    key: 'setPageNum',
-	    value: function setPageNum() {
-	      this.setState({
-	        pageId: this.context.router.storyText.key
-	      });
-	      // return pageId;
+	    key: 'goToStoryPage',
+	    value: function goToStoryPage(e, nextPage) {
+	      e.preventDefault();
+	      this.context.router.transitionTo('/' + nextPage);
 	    }
 	  }, {
-	    key: 'goToStoryPage',
-	    value: function goToStoryPage(e) {
+	    key: 'startOver',
+	    value: function startOver(e) {
 	      e.preventDefault();
-	      this.setPageNum();
-	      // let pageId = this.context.router.storyText.key;
-	      this.context.router.transitionTo('/' + pageId);
-	      return console.log("what is happening?");
+	      this.context.router.transitionTo('/');
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
 
+	      var currentPage = this.props.params.pageId;
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'StoryPage' },
 	        _react2.default.createElement(
-	          'h1',
+	          'h3',
 	          null,
 	          'GloBot: Adventures in Space'
 	        ),
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'pageText' },
-	          _react2.default.createElement(_Image2.default, null),
-	          _react2.default.createElement(_Text2.default, null)
+	          _react2.default.createElement(_Image2.default, { textKey: currentPage }),
+	          _react2.default.createElement(_Text2.default, { textKey: currentPage })
 	        ),
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'buttonArea' },
 	          _react2.default.createElement(_Buttons2.default, { className: 'first-choice', handleClick: function handleClick(e) {
-	              return _this2.gotToStoryPage(e);
+	              return _this2.goToStoryPage(e, _storyText2.default[currentPage].resultA);
 	            }, text: 'Choose A' }),
 	          _react2.default.createElement(_Buttons2.default, { className: 'second-choice', handleClick: function handleClick(e) {
-	              return _this2.goToStoryPage(e);
+	              return _this2.goToStoryPage(e, _storyText2.default[currentPage].resultB);
 	            }, text: 'Choose B' })
+	        ),
+	        _react2.default.createElement(
+	          'footer',
+	          null,
+	          _react2.default.createElement(_Buttons2.default, { className: 'start-over', handleClick: function handleClick(e) {
+	              return _this2.startOver(e);
+	            }, text: 'Start Over' })
 	        )
 	      );
 	    }
@@ -33191,7 +33190,7 @@
 	}(_react.Component);
 
 	exports.default = StoryPage;
-
+	;
 
 	StoryPage.contextTypes = {
 	  router: _react2.default.PropTypes.object
@@ -33237,6 +33236,7 @@
 	  _createClass(Text, [{
 	    key: 'render',
 	    value: function render() {
+	      var pageId = this.props.textKey;
 
 	      return _react2.default.createElement(
 	        'section',
@@ -33244,7 +33244,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          _storyText2.default[1].pageText
+	          _storyText2.default[pageId].pageText
 	        )
 	      );
 	    }
@@ -33252,35 +33252,6 @@
 
 	  return Text;
 	}(_react.Component);
-
-	//   getStoryText() {
-	//     console.log('Here is some text');
-	//     return storyText.pageNum().text;
-	//     // var pageId = this.context.router.params.pagename
-	//     // assuming pageId === 'page1'
-	//     // return storyText.pageId
-	//     // storyText.page1
-	//   }
-	//
-	//   // pageNum() {
-	//   //   var pageId = this.context.router.params.pageId;
-	//   //   return 'page' + pageId;
-	//   // }
-	//
-	//   render() {
-	//     return (
-	//       <section className="pageText">
-	//         {this.getStoryText()}
-	//         {this.props.children}
-	//       </section>
-	//     );
-	//   }
-	// }
-	//
-	// Text.contextTypes = {
-	//   router: React.PropTypes.object
-	// }
-
 
 	exports.default = Text;
 
@@ -33290,31 +33261,37 @@
 
 	'use strict';
 
-	var storyText = [{
-	  key: 'page1',
-	  pageText: 'Hello this is page 1 text',
-	  imageUrl: '../content/images/globot.svg',
-	  imageClassName: 'globot',
-	  imageAlt: 'GloBot',
-	  choices: ['a', 'b'],
-	  result: ['page2', 'page3']
-	}, {
-	  key: 'page2',
-	  pageText: 'You are crushing it Cross!  Check out this kick ass janky robot!',
-	  imageUrl: '../content/images/janky-robot.svg',
-	  imageClassName: 'janky-robot',
-	  imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
-	  choices: ['c', 'd'],
-	  result: ['page4', 'page5']
-	}, {
-	  key: 'page3',
-	  pageText: 'Here is some junk for ya',
-	  imageUrl: '../content/images/saturn.svg',
-	  imageClassName: 'saturn',
-	  imageAlt: "a planet that resembles Saturn",
-	  choices: ['e', 'f'],
-	  result: ['page4', 'page5']
-	}];
+	var storyText = {
+	  page1: {
+	    pageText: 'Hello this is page 1 text',
+	    imageUrl: '../content/images/globot-in-bed.svg',
+	    imageClassName: 'sleeping-globot',
+	    imageAlt: 'GloBot sleeping in a green bed.',
+	    imageUrl2: '../content/images/surprised-globot.svg',
+	    imageClassName2: 'surprised-globot',
+	    imageAlt2: 'Surprised GloBot',
+	    resultA: 'page2',
+	    resultB: 'page3'
+	  },
+
+	  page2: {
+	    pageText: 'You are crushing it Cross!  Check out this kick ass janky robot!',
+	    imageUrl: '../content/images/janky-robot.svg',
+	    imageClassName: 'janky-robot',
+	    imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
+	    resultA: 'page4',
+	    resultB: 'page5'
+	  },
+
+	  page3: {
+	    pageText: 'OMG three pages!',
+	    imageUrl: '../content/images/janky-robot.svg',
+	    imageClassName: 'janky-robot',
+	    imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
+	    resultA: 'page6',
+	    resultB: 'page7'
+	  }
+	};
 
 	module.exports = storyText;
 
@@ -33358,13 +33335,17 @@
 	  _createClass(Image, [{
 	    key: 'render',
 	    value: function render() {
+	      var pageId = this.props.textKey;
+
 	      return _react2.default.createElement(
 	        'section',
 	        { className: 'imageArea' },
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          _react2.default.createElement('img', { src: _storyText2.default[1].imageUrl, className: _storyText2.default[1].imageClassName, alt: _storyText2.default[1].imageAlt })
+	          _react2.default.createElement('img', {
+	            src: _storyText2.default[pageId].imageUrl, className: _storyText2.default[pageId].imageClassName, alt: _storyText2.default[pageId].imageAlt
+	          })
 	        )
 	      );
 	    }
@@ -33441,7 +33422,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/saturn.jpg\"); }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonArea {\n  display: flex; }\n\nbutton,\n.start-button {\n  background-color: #7d449a;\n  display: inline-block;\n  border: none;\n  border-radius: 40px;\n  color: #cfb3de;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .1em;\n  height: 60px;\n  width: 170px;\n  margin: 40px auto; }\n  button:hover,\n  .start-button:hover {\n    background-color: #c4a1d6;\n    color: #7d449a; }\n\np {\n  text-align: center;\n  margin-top: 20px;\n  color: white;\n  font-size: 36px; }\n\n.globot {\n  display: block;\n  height: auto;\n  width: 200px;\n  margin: 0 auto; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/saturn.jpg\"); }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonArea {\n  display: flex; }\n\nbutton {\n  background-color: #7d449a;\n  display: inline-block;\n  border: none;\n  border-radius: 40px;\n  color: #cfb3de;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .05em;\n  height: 55px;\n  width: 160px;\n  margin: 40px auto; }\n  button:hover {\n    background-color: #c4a1d6;\n    color: #7d449a; }\n\n.StoryPage {\n  min-height: 100vh; }\n\np {\n  text-align: center;\n  margin-top: 20px;\n  color: white;\n  font-size: 30px; }\n\nh3 {\n  color: #c4a1d6;\n  text-align: center;\n  font-size: 30px;\n  margin-top: 20px; }\n\n.pageText {\n  height: 55vh; }\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  width: 100%; }\n\n.start-over {\n  width: 200px; }\n  .start-over:hover {\n    color: white; }\n\n.globot {\n  display: block;\n  height: auto;\n  width: 100px;\n  margin: 0 auto; }\n\n.sleeping-globot {\n  width: 200px;\n  height: auto; }\n", ""]);
 
 	// exports
 
