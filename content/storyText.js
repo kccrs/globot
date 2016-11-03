@@ -1,23 +1,36 @@
 const storyText = {
   page1: {
-    pageText: 'Hello this is page 1 text',
-    imageUrl: '../content/images/globot-in-bed.svg',
+    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  GloBot sleeps peacefully, dreaming of far away adventures. Shall we wake her up?',
+    imageUrl: '../content/images/globot-sleeping.svg',
     imageClassName: 'sleeping-globot',
-    imageAlt: 'GloBot sleeping in a green bed.',
-    secondImageUrl: '../content/images/surprised-globot.svg',
-    secondImageClassName: 'surprised-globot',
-    secondImageAlt: 'GloBot sure looks surprised!',
-    resultA: 'page2',
-    resultB: 'page3'
+    imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
+    choiceButton: {
+                    visible: 'hidden',
+                    text: 'Yes!',
+                    result: 'page2'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                    text: 'No Way!',
+                    result: 'page3'
+                  },
   },
 
   page2: {
-    pageText: 'Check out this kick ass janky robot!',
-    imageUrl: '../content/images/janky-robot.svg',
-    imageClassName: 'janky-robot',
-    imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
-    resultA: 'page4',
-    resultB: 'page5'
+    pageText: '"Oh no! What happened to my glow?!  "',
+    imageUrl: '../content/images/surprised-globot.svg',
+    imageClassName: 'surprised-globot',
+    imageAlt: "GloBot looks surprised that her glow is gone",
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page4'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page5'
+                  }
   },
 
   page3: {
@@ -25,9 +38,86 @@ const storyText = {
     imageUrl: '../content/images/janky-robot.svg',
     imageClassName: 'janky-robot',
     imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
-    resultA: 'page6',
-    resultB: 'page7'
-  }
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page4: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page5: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page6: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page7: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
 };
 
 module.exports = storyText;

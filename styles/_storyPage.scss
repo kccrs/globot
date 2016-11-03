@@ -5,15 +5,19 @@
   flex-direction: column;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 p {
   text-align: center;
   margin-top: 20px;
-  color: white;
+  color: $color-space-medium;
   font-size: 30px;
 }
 
 h3 {
-  color: $color-space;
+  color: $color-space-medium;
   text-align: center;
   font-size: 24px;
   margin-bottom: 10px;
@@ -21,18 +25,13 @@ h3 {
 
 .pageText {
   margin-top: 50px;
-  // height: 55vh;
 }
 
 .first-choice,
 .second-choice {
-  // height: 80px;
+  height: 100px;
   width: 300px;
   display: flex;
-}
-
-.second-choice-button {
-  // display: none;
 }
 
 footer {
@@ -49,15 +48,14 @@ nav,
   height: 150px;
 }
 
-
 .start-over {
-  background-color: transparentize(white, .70);
+  background-color: transparentize($color-space-light, .50);
   color: saturate($color-space, 70);
   font-size: 26px;
   margin: 10px auto 20px;
   width: 150px;
   &:hover {
-    background-color: lighten($color-space, 65);
+    background-color: $color-space-light;
     height: 52px;
     width: 155px;
   }

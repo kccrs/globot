@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Buttons from './Buttons';
+import Button from './Button';
 
 export default class Application extends Component {
 
@@ -16,7 +16,7 @@ export default class Application extends Component {
           <h2>Adventures in Space</h2>
         </section>
         <section className="buttonContainer">
-          <Buttons className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
+          <Button className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
         </section>
       </div>
     );

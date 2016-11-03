@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  color: lighten($color-space, 60);
+  color: $color-space-light;
   font-size: 40px;
   font-family: $font-home-page;
   letter-spacing: .1em;
@@ -46,11 +46,11 @@ h2 {
 }
 
 button {
-  background-color: lighten($color-space, 30);
+  background-color: $color-space-medium;
   display: inline-block;
   border: none;
   border-radius: 40px;
-  color: lighten($color-space, 65);
+  color: $color-space;
   font-family: $font-home-page-secondary;
   font-size: 30px;
   letter-spacing: .05em;
@@ -58,7 +58,7 @@ button {
   width: 160px;
   margin: 20px auto;
   &:hover {
-    background-color: transparentize(lighten($color-space, 70), .7);
+    background-color: transparentize($color-space-light, .3);
     color: white;
     width: 200px;
     height: 55px;

@@ -7,3 +7,5 @@ $font-home-page-secondary: 'Play', sans-serif;
 
 // Colors
 $color-space: #271530;
+$color-space-medium: lighten($color-space, 40);
+$color-space-light: lighten($color-space, 60);

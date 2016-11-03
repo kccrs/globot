@@ -20,7 +20,3 @@ const Root = () =>  {
 };
 
 render(<Root />, document.querySelector('#application'));
-
-
-  // <Text />
-  // <Buttons />

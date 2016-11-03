@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Buttons from './Buttons';
+import classnames from 'classnames';
+
+import Button from './Button';
 import Text from './Text';
 import Image from './Image';
 import storyText from '../content/storyText';
@@ -18,28 +20,48 @@ export default class StoryPage extends Component {
 
   render () {
     let currentPage = this.props.params.pageId;
+    // let buttonClass = classnames('choice-button', {storyText[currentPage].choiceButton.visible});
+
+    // <article className={classnames('Grocery', { starred }, { purchased }) }>
+
+
     return (
       <div className="StoryPage">
-        <section className="pageText">
+        <main className="pageText">
           <Image textKey={currentPage} />
           <Text textKey={currentPage} />
-        </section>
-        <footer>
+        </main>
+        <section className="sidebar">
           <nav className="buttonContainer">
+
             <section className="first-choice">
-              <Buttons className="first-choice-button" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultA)} text="Choose A"/>
+              <Button
+                className={storyText[currentPage].choiceButton.visible}
+                handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].choiceButton.result)}
+                text={storyText[currentPage].choiceButton.text} />
             </section>
+
             <section className="second-choice">
-              <Buttons className="second-choice-button" handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].resultB)} text="Choose B"/>
+              <Button
+                className="second-choice-button"
+                handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].secondChoiceButton.result)}
+                text={storyText[currentPage].secondChoiceButton.text} />
             </section>
+
+            <Button
+              className="start-over"
+              handleClick={(e) => this.startOver(e)}
+              text="Start Over" />
           </nav>
-          <Buttons className="start-over" handleClick={(e) => this.startOver(e)} text="Start Over" />
-          <h3>GloBot</h3>
-        </footer>
+        </section>
       </div>
     );
   };
 };
+
+// { this.props.choices.map(choice) {
+//   return <Button className="choice button" text={choice.text} nextPage={choice.nextPage} />
+// }}
 
 StoryPage.contextTypes = {
   router: React.PropTypes.object
