@@ -20,10 +20,8 @@ export default class StoryPage extends Component {
 
   render () {
     let currentPage = this.props.params.pageId;
-    // let buttonClass = classnames('choice-button', {storyText[currentPage].choiceButton.visible});
-
-    // <article className={classnames('Grocery', { starred }, { purchased }) }>
-
+    let buttonClass = classnames('first-choice-button', storyText[currentPage].choiceButton.visible);
+    let secondButtonClass = classnames('second-choice-button', storyText[currentPage].secondChoiceButton.visible);
 
     return (
       <div className="StoryPage">
@@ -36,14 +34,14 @@ export default class StoryPage extends Component {
 
             <section className="first-choice">
               <Button
-                className={storyText[currentPage].choiceButton.visible}
+                className={buttonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].choiceButton.result)}
                 text={storyText[currentPage].choiceButton.text} />
             </section>
 
             <section className="second-choice">
               <Button
-                className="second-choice-button"
+                className={secondButtonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].secondChoiceButton.result)}
                 text={storyText[currentPage].secondChoiceButton.text} />
             </section>

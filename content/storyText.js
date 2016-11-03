@@ -5,14 +5,12 @@ const storyText = {
     imageClassName: 'sleeping-globot',
     imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
     choiceButton: {
-                    visible: 'hidden',
+                    visible: 'visible',
                     text: 'Yes!',
                     result: 'page2'
                   },
     secondChoiceButton: {
                     visible: 'hidden',
-                    text: 'No Way!',
-                    result: 'page3'
                   },
   },
 
