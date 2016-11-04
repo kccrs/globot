@@ -1,85 +1,9 @@
 @import '_reset';
 @import '_variables';
-
-html {
-  box-sizing: border-box;
-  min-width: 100%;
-  height: 100%;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  background-size: cover;
-  background: no-repeat url('/../content/images/saturn.jpg');
-}
-
-.titles {
-  background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
-  height: 250px;
-  margin: 0 auto;
-  margin-top: 30vh;
-  width: 50vw;
-}
-
-h1 {
-  color: lighten($color-space, 40);
-  font-size: 60px;
-  text-align: center;
-  font-family: $font-home-page-secondary;
-  padding: 20px 0;
-}
-
-h2 {
-  color: lighten($color-space, 60);
-  font-size: 40px;
-  font-family: $font-home-page;
-  letter-spacing: .1em;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.buttonArea {
-  display: flex;
-}
-
-button {
-  background-color: lighten($color-space, 30);
-  display: inline-block;
-  border: none;
-  border-radius: 40px;
-  color: lighten($color-space, 65);
-  font-family: $font-home-page-secondary;
-  font-size: 30px;
-  letter-spacing: .1em;
-  height: 60px;
-  width: 170px;
-  margin: 40px auto;
-  &:hover {
-    background-color: lighten($color-space, 60);
-    color: lighten($color-space, 30);
-  }
-}
-
-p {
-  text-align: center;
-  margin-top: 20px;
-  color: white;
-  font-size: 36px;
-}
-
-.globot {
-  display: block;
-  height: auto;
-  width: 200px;
-  margin: 0 auto;
-}
-
-h3 {
-  color: lighten($color-space, 60);
-  text-align: center;
-  font-size: 30px;
-  margin-top: 20px;
-}
+@import '_home';
+@import '_storyPage';
+@import '_page1';
+@import '_page2';
+@import '_page3';
+@import '_page4';
+@import '_page5';

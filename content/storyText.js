@@ -1,30 +1,121 @@
 const storyText = {
   page1: {
-    pageText: 'Hello this is page 1 text',
-    imageUrl: '../content/images/globot.svg',
-    imageClassName: 'globot',
-    imageAlt: 'GloBot',
-    resultA: 'page2',
-    resultB: 'page3'
+    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  GloBot sleeps peacefully, dreaming of far away adventures. Shall we wake her up?',
+    imageUrl: '../content/images/globot-sleeping.svg',
+    imageClassName: 'sleeping-globot',
+    imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page2'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  },
   },
 
   page2: {
-    pageText: 'You are crushing it Cross!  Check out this kick ass janky robot!',
-    imageUrl: '../content/images/janky-robot.svg',
-    imageClassName: 'janky-robot',
-    imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
-    resultA: 'page4',
-    resultB: 'page5'
+    pageText: 'Oh no! What happened to my glow?! What should I do?! Should I turn my power off or ask my best friend Janky for help?',
+    imageUrl: '../content/images/oh-no.svg',
+    imageClassName: 'surprised-globot',
+    imageAlt: "GloBot looks surprised that her glow is gone",
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Ask Janky',
+                    result: 'page3'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'Power Off',
+                    result: 'page4'
+                  }
   },
 
   page3: {
     pageText: 'OMG three pages!',
     imageUrl: '../content/images/janky-robot.svg',
     imageClassName: 'janky-robot',
-    imageAlt: "a picture of Janky, GloBot's hardscrabble best friend",
-    resultA: 'page6',
-    resultB: 'page7'
-  }
+    imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page5'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page6'
+                  }
+  },
+
+  page4: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page5: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page6: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
+  page7: {
+    pageText: '',
+    imageUrl: '',
+    imageClassName: '',
+    imageAlt: '',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes!',
+                    result: 'page6'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'No Way!',
+                    result: 'page7'
+                  }
+  },
+
 };
 
 module.exports = storyText;

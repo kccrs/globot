@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
-export default class Buttons extends Component {
+export default class Button extends Component {
   render() {
     return (
       <button
@@ -15,10 +14,10 @@ export default class Buttons extends Component {
   }
 }
 
-
 // going to have the following buttons:
-// start
-// nav button to next part of story
-// start over button (in header and/or at end points in story)
+
+// start DONE
+// nav button to next part of story DONE
+// start over button (in header and/or at end points in story) DONE
 // text to speech button
 // color changer button
