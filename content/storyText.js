@@ -15,19 +15,19 @@ const storyText = {
   },
 
   page2: {
-    pageText: '"Oh no! What happened to my glow?!  "',
-    imageUrl: '../content/images/surprised-globot.svg',
+    pageText: 'Oh no! What happened to my glow?! What should I do?! Should I turn my power off or ask my best friend Janky for help?',
+    imageUrl: '../content/images/oh-no.svg',
     imageClassName: 'surprised-globot',
     imageAlt: "GloBot looks surprised that her glow is gone",
     choiceButton: {
                     visible: 'visible',
-                    text: 'Yes!',
-                    result: 'page4'
+                    text: 'Ask Janky',
+                    result: 'page3'
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'No Way!',
-                    result: 'page5'
+                    text: 'Power Off',
+                    result: 'page4'
                   }
   },
 
@@ -39,12 +39,12 @@ const storyText = {
     choiceButton: {
                     visible: 'visible',
                     text: 'Yes!',
-                    result: 'page6'
+                    result: 'page5'
                   },
     secondChoiceButton: {
                     visible: 'visible',
                     text: 'No Way!',
-                    result: 'page7'
+                    result: 'page6'
                   }
   },
 

@@ -14,7 +14,6 @@ export default class Button extends Component {
   }
 }
 
-
 // going to have the following buttons:
 
 // start DONE
