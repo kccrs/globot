@@ -20,11 +20,15 @@ export default class StoryPage extends Component {
 
   render () {
     let currentPage = this.props.params.pageId;
+
     let buttonClass = classnames('first-choice-button', storyText[currentPage].choiceButton.visible);
+
     let secondButtonClass = classnames('second-choice-button', storyText[currentPage].secondChoiceButton.visible);
 
+    let pageClass = classnames('StoryPage', currentPage);
+
     return (
-      <div className="StoryPage">
+      <div className={pageClass}>
         <main className="pageText">
           <Image textKey={currentPage} />
           <Text textKey={currentPage} />

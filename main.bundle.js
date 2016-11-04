@@ -33151,10 +33151,8 @@
 	      var _this2 = this;
 
 	      var currentPage = this.props.params.pageId;
-	      var buttonClass = (0, _classnames2.default)('choice-button', _storyText2.default[currentPage].choiceButton.visible);
-
-	      // <article className={classnames('Grocery', { starred }, { purchased }) }>
-
+	      var buttonClass = (0, _classnames2.default)('first-choice-button', _storyText2.default[currentPage].choiceButton.visible);
+	      var secondButtonClass = (0, _classnames2.default)('second-choice-button', _storyText2.default[currentPage].secondChoiceButton.visible);
 
 	      return _react2.default.createElement(
 	        'div',
@@ -33177,7 +33175,7 @@
 	              _react2.default.createElement(_Button2.default, {
 	                className: buttonClass,
 	                handleClick: function handleClick(e) {
-	                  return _this2.goToStoryPage(e, _storyText2.default[currentPage].resultA);
+	                  return _this2.goToStoryPage(e, _storyText2.default[currentPage].choiceButton.result);
 	                },
 	                text: _storyText2.default[currentPage].choiceButton.text })
 	            ),
@@ -33185,7 +33183,7 @@
 	              'section',
 	              { className: 'second-choice' },
 	              _react2.default.createElement(_Button2.default, {
-	                className: 'second-choice-button',
+	                className: secondButtonClass,
 	                handleClick: function handleClick(e) {
 	                  return _this2.goToStoryPage(e, _storyText2.default[currentPage].secondChoiceButton.result);
 	                },
@@ -33338,7 +33336,7 @@
 
 	var storyText = {
 	  page1: {
-	    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  GloBot sleeps peacefully, dreaming of far away adventures. Shall we wake her up?',
+	    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  She sleeps peacefully, dreaming of exciting adventures.  Shall we wake her up?',
 	    imageUrl: '../content/images/globot-sleeping.svg',
 	    imageClassName: 'sleeping-globot',
 	    imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
@@ -33348,26 +33346,24 @@
 	      result: 'page2'
 	    },
 	    secondChoiceButton: {
-	      visible: 'hidden',
-	      text: 'No Way!',
-	      result: 'page3'
+	      visible: 'hidden'
 	    }
 	  },
 
 	  page2: {
-	    pageText: '"Oh no! What happened to my glow?!  "',
-	    imageUrl: '../content/images/surprised-globot.svg',
+	    pageText: '"Oh no! What happened to my glow spot?! What should I do?! I can\'t be GloBot the robot without a glow spot! Should I turn my power off or ask my best friend Janky for help?"',
+	    imageUrl: '../content/images/oh-no.svg',
 	    imageClassName: 'surprised-globot',
-	    imageAlt: "GloBot looks surprised that her glow is gone",
+	    imageAlt: 'GloBot looks surprised that her glow is gone',
 	    choiceButton: {
 	      visible: 'visible',
-	      text: 'Yes!',
-	      result: 'page4'
+	      text: 'Ask Janky',
+	      result: 'page3'
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
-	      text: 'No Way!',
-	      result: 'page5'
+	      text: 'Power Off',
+	      result: 'page4'
 	    }
 	  },
 
@@ -33375,16 +33371,16 @@
 	    pageText: 'OMG three pages!',
 	    imageUrl: '../content/images/janky-robot.svg',
 	    imageClassName: 'janky-robot',
-	    imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
+	    imageAlt: 'A picture of Janky, GloBot\'s hardscrabble best friend',
 	    choiceButton: {
 	      visible: 'visible',
 	      text: 'Yes!',
-	      result: 'page6'
+	      result: 'page5'
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
 	      text: 'No Way!',
-	      result: 'page7'
+	      result: 'page6'
 	    }
 	  },
 
@@ -33505,13 +33501,9 @@
 	      return _react2.default.createElement(
 	        'section',
 	        { className: 'imageArea' },
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          _react2.default.createElement('img', {
-	            src: _storyText2.default[pageId].imageUrl, className: _storyText2.default[pageId].imageClassName, alt: _storyText2.default[pageId].imageAlt
-	          })
-	        )
+	        _react2.default.createElement('img', {
+	          src: _storyText2.default[pageId].imageUrl, className: _storyText2.default[pageId].imageClassName, alt: _storyText2.default[pageId].imageAlt
+	        })
 	      );
 	    }
 	  }]);
@@ -33587,7 +33579,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\nbody {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/saturn.jpg\") center center fixed; }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  height: 80px; }\n\nbutton {\n  background-color: #985ab7;\n  display: inline-block;\n  border: none;\n  border-radius: 40px;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .05em;\n  height: 50px;\n  width: 160px;\n  margin: 20px auto; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white;\n    width: 200px;\n    height: 55px; }\n\n.StoryPage {\n  min-height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n.hidden {\n  visibility: hidden; }\n\np {\n  text-align: center;\n  margin-top: 20px;\n  color: #985ab7;\n  font-size: 30px; }\n\nh3 {\n  color: #985ab7;\n  text-align: center;\n  font-size: 24px;\n  margin-bottom: 10px; }\n\n.pageText {\n  margin-top: 50px; }\n\n.first-choice,\n.second-choice {\n  height: 100px;\n  width: 300px;\n  display: flex; }\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  display: flex;\n  flex-direction: column;\n  width: 100%; }\n\nnav,\n.first-choice,\n.second-choice {\n  height: 150px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.5);\n  color: #2e0045;\n  font-size: 26px;\n  margin: 10px auto 20px;\n  width: 150px; }\n  .start-over:hover {\n    background-color: #c4a1d6;\n    height: 52px;\n    width: 155px; }\n\n.globot {\n  display: block;\n  height: auto;\n  width: 100px;\n  margin: 0 auto; }\n\n.sleeping-globot {\n  width: 400px;\n  height: auto; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  min-width: 100%;\n  height: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed; }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  margin-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-size: 60px;\n  text-align: center;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0; }\n\nh2 {\n  color: #c4a1d6;\n  font-size: 40px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  height: 80px; }\n\nbutton {\n  background-color: #985ab7;\n  display: inline-block;\n  border: none;\n  border-radius: 40px;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  font-size: 30px;\n  letter-spacing: .05em;\n  height: 50px;\n  width: 160px;\n  margin: 20px auto; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white;\n    width: 200px;\n    height: 55px; }\n\n.StoryPage {\n  min-height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n.hidden {\n  visibility: hidden; }\n\np {\n  text-align: center;\n  margin-top: 20px;\n  color: #985ab7;\n  font-size: 30px; }\n\nh3 {\n  color: #985ab7;\n  text-align: center;\n  font-size: 24px;\n  margin-bottom: 10px; }\n\n.pageText {\n  margin-top: 30px; }\n\n.first-choice,\n.second-choice {\n  height: 100px;\n  width: 300px;\n  display: flex; }\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  display: flex;\n  flex-direction: column;\n  width: 100%; }\n\nnav,\n.first-choice,\n.second-choice {\n  height: 150px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.5);\n  color: #2e0045;\n  font-size: 26px;\n  margin: 10px auto 20px;\n  width: 150px; }\n  .start-over:hover {\n    background-color: #c4a1d6;\n    height: 52px;\n    width: 155px; }\n\n.globot {\n  display: block;\n  height: auto;\n  width: 100px;\n  margin: 0 auto; }\n\n.sleeping-globot {\n  width: 400px;\n  height: auto; }\n\n.surprised-globot {\n  margin-left: 15%;\n  width: 60%; }\n", ""]);
 
 	// exports
 

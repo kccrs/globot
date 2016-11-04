@@ -1,6 +1,6 @@
 const storyText = {
   page1: {
-    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  GloBot sleeps peacefully, dreaming of far away adventures. Shall we wake her up?',
+    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  She sleeps peacefully, dreaming of exciting adventures.  Shall we wake her up?',
     imageUrl: '../content/images/globot-sleeping.svg',
     imageClassName: 'sleeping-globot',
     imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
@@ -15,10 +15,10 @@ const storyText = {
   },
 
   page2: {
-    pageText: 'Oh no! What happened to my glow?! What should I do?! Should I turn my power off or ask my best friend Janky for help?',
+    pageText: '"Oh no! What happened to my glow spot?! What should I do?! I can\'t be GloBot the robot without a glow spot! Should I turn my power off or ask my best friend Janky for help?"',
     imageUrl: '../content/images/oh-no.svg',
     imageClassName: 'surprised-globot',
-    imageAlt: "GloBot looks surprised that her glow is gone",
+    imageAlt: 'GloBot looks surprised that her glow is gone',
     choiceButton: {
                     visible: 'visible',
                     text: 'Ask Janky',
@@ -35,7 +35,7 @@ const storyText = {
     pageText: 'OMG three pages!',
     imageUrl: '../content/images/janky-robot.svg',
     imageClassName: 'janky-robot',
-    imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
+    imageAlt: 'A picture of Janky, GloBot\'s hardscrabble best friend',
     choiceButton: {
                     visible: 'visible',
                     text: 'Yes!',

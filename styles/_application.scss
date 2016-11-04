@@ -8,16 +8,18 @@ html {
   box-sizing: inherit;
 }
 
-body {
+
+.Application {
+  height: 100vh;
   background-size: cover;
-  background: no-repeat url('/../content/images/saturn.jpg') center center fixed;
+  background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
 }
 
 .titles {
   background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
   height: 250px;
   margin: 0 auto;
-  margin-top: 30vh;
+  padding-top: 30vh;
   width: 50vw;
 }
 
