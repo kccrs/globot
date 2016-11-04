@@ -1,8 +1,11 @@
 
 .StoryPage {
-  min-height: 100%;
+  background-size: cover;
+  background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  min-height: 100%;
 }
 
 .hidden {
@@ -10,17 +13,17 @@
 }
 
 p {
-  text-align: center;
-  margin-top: 20px;
-  color: $color-space-medium;
+  // color: $color-space-medium;
   font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 h3 {
   color: $color-space-medium;
-  text-align: center;
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .pageText {
@@ -29,16 +32,16 @@ h3 {
 
 .first-choice,
 .second-choice {
+  display: flex;
   height: 100px;
   width: 300px;
-  display: flex;
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   display: flex;
   flex-direction: column;
+  position: absolute;
   width: 100%;
 }
 
