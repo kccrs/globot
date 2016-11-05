@@ -1,6 +1,7 @@
 const storyText = {
   page1: {
-    pageText: 'In a galaxy not so far from ours, lives a curious robot named GloBot.  GloBot sleeps peacefully, dreaming of far away adventures. Shall we wake her up?',
+    pageText:
+              'In a galaxy not so far from our own, lives a curious robot named GloBot.  Here she is sleeping peacefully, dreaming of exciting adventures.  Shall we wake her up?',
     imageUrl: '../content/images/globot-sleeping.svg',
     imageClassName: 'sleeping-globot',
     imageAlt: 'GloBot sleeping in a gray bed with blue and green covers.',
@@ -15,10 +16,11 @@ const storyText = {
   },
 
   page2: {
-    pageText: 'Oh no! What happened to my glow?! What should I do?! Should I turn my power off or ask my best friend Janky for help?',
+    pageText:
+              '"Oh no! What happened to my glow spot?!  What should I do?  I can\'t be GloBot the robot without a glow spot!  Should I turn my power off or ask my best friend Janky for help?"',
     imageUrl: '../content/images/oh-no.svg',
     imageClassName: 'surprised-globot',
-    imageAlt: "GloBot looks surprised that her glow is gone",
+    imageAlt: 'GloBot looks surprised that her glow is gone',
     choiceButton: {
                     visible: 'visible',
                     text: 'Ask Janky',
@@ -32,53 +34,47 @@ const storyText = {
   },
 
   page3: {
-    pageText: 'OMG three pages!',
-    imageUrl: '../content/images/janky-robot.svg',
-    imageClassName: 'janky-robot',
-    imageAlt: "A picture of Janky, GloBot's hardscrabble best friend",
+    pageText:
+              '"Oh Janky! I\'ve lost my glow! What should I do?"  GloBot cried.  "Hmm..."  replied Janky,  "I know!  We need to find you some GloGurt! I\'ve heard that it can recharge your glow energy.  But where should we go to look for some?"',
+    imageUrl: '../content/images/friends.svg',
+    imageClassName: 'friends',
+    imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
     choiceButton: {
                     visible: 'visible',
-                    text: 'Yes!',
+                    text: 'Go to Planet Goo',
                     result: 'page5'
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'No Way!',
+                    text: 'Follow a colorful comet',
                     result: 'page6'
                   }
   },
 
   page4: {
-    pageText: '',
-    imageUrl: '',
-    imageClassName: '',
-    imageAlt: '',
+    pageText:
+              'Well, that wasn\'t a great idea, was it?  GloBot turned her power switch off and there is no one around to turn it back on!   THE END.',
+    imageUrl: '../content/images/powered-down.svg',
+    imageClassName: 'power-down',
+    imageAlt: 'GloBot has powered down and is off.',
     choiceButton: {
-                    visible: 'visible',
-                    text: 'Yes!',
-                    result: 'page6'
+                    visible: 'hidden',
                   },
     secondChoiceButton: {
-                    visible: 'visible',
-                    text: 'No Way!',
-                    result: 'page7'
+                    visible: 'hidden',
                   }
   },
 
   page5: {
-    pageText: '',
+    pageText: 'Oh no!  GloBot is trapped forever in a never-ending sea of slimy, sticky goo!  THE END.',
     imageUrl: '',
     imageClassName: '',
     imageAlt: '',
     choiceButton: {
-                    visible: 'visible',
-                    text: 'Yes!',
-                    result: 'page6'
+                    visible: 'hidden',
                   },
     secondChoiceButton: {
-                    visible: 'visible',
-                    text: 'No Way!',
-                    result: 'page7'
+                    visible: 'hidden',
                   }
   },
 
