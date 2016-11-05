@@ -34,7 +34,7 @@ export default class StoryPage extends Component {
           <Text textKey={currentPage} />
         </main>
         <section className="sidebar">
-          <nav className="buttonContainer">
+          <nav className="nav-container">
 
             <section className="first-choice">
               <Button

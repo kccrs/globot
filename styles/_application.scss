@@ -54,15 +54,15 @@ button {
   color: $color-space;
   display: inline-block;
   font-family: $font-home-page-secondary;
-  font-size: 30px;
+  font-size: 24px;
   height: 50px;
   letter-spacing: .05em;
-  margin: 20px auto;
-  width: 160px;
+  // margin: 20px auto;
+  min-width: 160px;
   &:hover {
     background-color: transparentize($color-space-light, .3);
     color: white;
-    height: 55px;
-    width: 200px;
+    min-height: 55px;
+    min-width: 200px;
   }
 }
