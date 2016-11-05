@@ -33214,10 +33214,6 @@
 	exports.default = StoryPage;
 	;
 
-	// { this.props.choices.map(choice) {
-	//   return <Button className="choice button" text={choice.text} nextPage={choice.nextPage} />
-	// }}
-
 	StoryPage.contextTypes = {
 	  router: _react2.default.PropTypes.object
 	};
@@ -33314,8 +33310,25 @@
 	  }
 
 	  _createClass(Text, [{
+	    key: 'textToSpeech',
+	    value: function textToSpeech(e) {
+	      e.preventDefault();
+	      var pageId = this.props.textKey;
+
+	      var tellStory = window.speechSynthesis;
+
+	      var msg = new SpeechSynthesisUtterance(_storyText2.default[pageId].pageText);
+	      var voices = window.tellStory.getVoices();
+
+	      msg.voice = voices[0];
+
+	      tellStory.speak(msg);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      var pageId = this.props.textKey;
 
 	      return _react2.default.createElement(
@@ -33325,6 +33338,17 @@
 	          'p',
 	          null,
 	          _storyText2.default[pageId].pageText
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(Button, {
+	            className: 'read-text',
+	            handleClick: function handleClick(e) {
+	              return _this2.textToSpeech(e);
+	            },
+	            text: 'Read Aloud'
+	          })
 	        )
 	      );
 	    }
@@ -33360,7 +33384,7 @@
 	  page2: {
 	    pageText: '"Oh no! What happened to my glow spot?!  What should I do?  I can\'t be GloBot the robot without a glow spot!  Should I turn my power off or ask my best friend Janky for help?"',
 	    imageUrl: '../content/images/oh-no.svg',
-	    imageClassName: 'surprised-globot',
+	    imageClassName: 'oh-no',
 	    imageAlt: 'GloBot looks surprised that her glow is gone',
 	    choiceButton: {
 	      visible: 'visible',
@@ -33405,10 +33429,10 @@
 	  },
 
 	  page5: {
-	    pageText: 'Oh no!  GloBot is trapped forever in a never-ending sea of slimy, sticky goo!  THE END.',
-	    imageUrl: '',
-	    imageClassName: '',
-	    imageAlt: '',
+	    pageText: 'Oh no!  GloBot is trapped in a never-ending sea of slimy, sticky goo!  THE END.',
+	    imageUrl: '../content/images/surprised-globot.svg',
+	    imageClassName: 'surprised-bot',
+	    imageAlt: 'GloBot is slowly spinning in a sticky planet as she is trapped in goo.',
 	    choiceButton: {
 	      visible: 'hidden'
 	    },
@@ -33419,18 +33443,18 @@
 
 	  page6: {
 	    pageText: '',
-	    imageUrl: '',
-	    imageClassName: '',
-	    imageAlt: '',
+	    imageUrl: '../content/images/friends.svg',
+	    imageClassName: 'friends friends-color',
+	    imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
 	    choiceButton: {
 	      visible: 'visible',
-	      text: 'Yes!',
-	      result: 'page6'
+	      text: 'Choose A',
+	      result: 'page7'
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
-	      text: 'No Way!',
-	      result: 'page7'
+	      text: 'Choose B',
+	      result: 'page8'
 	    }
 	  },
 
@@ -33578,7 +33602,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  height: 100%;\n  min-width: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  padding-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  font-size: 60px;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  color: #c4a1d6;\n  font-family: \"Orbitron\", sans-serif;\n  font-size: 40px;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  display: inline-block;\n  font-family: \"Play\", sans-serif;\n  font-size: 24px;\n  height: 50px;\n  letter-spacing: .05em;\n  min-width: 160px; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white;\n    min-height: 55px;\n    min-width: 200px; }\n\n.StoryPage {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  min-height: 100%; }\n\n.hidden {\n  visibility: hidden; }\n\np {\n  color: #271530;\n  font-size: 30px;\n  margin-top: 10px;\n  text-align: center; }\n\n.first-choice,\n.second-choice {\n  display: flex;\n  height: 100px;\n  width: 300px; }\n\nnav {\n  display: flex;\n  justify-content: space-around;\n  height: 150px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.5);\n  color: #2e0045;\n  font-size: 26px;\n  margin-left: 25px;\n  width: 150px; }\n  .start-over:hover {\n    background-color: #c4a1d6;\n    height: 52px;\n    width: 155px; }\n\n.story {\n  background-color: rgba(255, 255, 255, 0.7);\n  color: black;\n  padding: 5px 50px 10px; }\n\n.sleeping-globot {\n  width: 45%;\n  margin-left: 30%; }\n\n.surprised-globot {\n  margin-bottom: 20px;\n  margin-left: 20%;\n  width: 60%; }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  margin: 5% 0 5% 25%;\n  padding-top: 40px;\n  width: 50%; }\n\n.power-down {\n  margin-left: 37%;\n  padding-bottom: 10px;\n  width: 30%; }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.png\") center center fixed; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  height: 100%;\n  min-width: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n\n.titles {\n  background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(39, 21, 48, 0.05) 75%);\n  height: 250px;\n  margin: 0 auto;\n  padding-top: 30vh;\n  width: 50vw; }\n\nh1 {\n  font-size: 60px;\n  font-size: 3.75rem;\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  font-size: 40px;\n  font-size: 2.5rem;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center; }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  font-size: 24px;\n  font-size: 1.5rem;\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  display: inline-block;\n  font-family: \"Play\", sans-serif;\n  height: 50px;\n  letter-spacing: .05em;\n  min-width: 160px; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white;\n    min-height: 55px;\n    min-width: 200px; }\n\n.StoryPage {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  min-height: 100%; }\n\n.hidden {\n  visibility: hidden; }\n\np {\n  color: #271530;\n  font-size: 30px;\n  margin-top: 10px;\n  text-align: center; }\n\n.first-choice,\n.second-choice {\n  display: flex;\n  height: 100px;\n  width: 300px; }\n\nnav {\n  display: flex;\n  justify-content: space-around;\n  height: 150px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.5);\n  color: #2e0045;\n  font-size: 26px;\n  margin-left: 25px;\n  width: 150px; }\n  .start-over:hover {\n    background-color: #c4a1d6;\n    height: 52px;\n    width: 155px; }\n\n.story {\n  background-color: rgba(255, 255, 255, 0.7);\n  color: black;\n  padding: 5px 50px 10px; }\n\n.sleeping-globot {\n  width: 45%;\n  margin-left: 30%; }\n\n.oh-no {\n  margin-bottom: 20px;\n  margin-left: 20%;\n  width: 60%; }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  margin: 5% 0 5% 25%;\n  padding-top: 40px;\n  width: 50%; }\n\n.power-down {\n  margin-left: 37%;\n  padding-bottom: 10px;\n  width: 30%; }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.png\") center center fixed; }\n\n.surprised-bot {\n  width: 18%;\n  margin: 10% 0 10% 40%;\n  animation: infinite-spinning linear 3s infinite; }\n\n@keyframes infinite-spinning {\n  100% {\n    transform: rotate(360deg); } }\n\n.page6 {\n  background: no-repeat url(\"/../content/images/background/green-saturn.png\") center center fixed; }\n\n#whatz {\n  fill: red;\n  stroke: black; }\n", ""]);
 
 	// exports
 
