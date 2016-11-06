@@ -16,15 +16,15 @@ html {
 }
 
 .titles {
-  background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
-  height: 250px;
-  margin: 0 auto;
+  // background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
+//   // height: 250px;
+//   // margin: 30% auto;
   padding-top: 30vh;
-  width: 50vw;
+//   width: 50vw;
 }
 
 h1 {
-  @include font-size(60px);
+  font-size: 60px;
   color: lighten($color-space, 40);
   font-family: $font-home-page-secondary;
   padding: 20px 0;
@@ -32,7 +32,7 @@ h1 {
 }
 
 h2 {
-  @include font-size(40px);
+  font-size: 40px;
   font-family: $font-home-page;
   letter-spacing: .1em;
   padding: 10px 0;
