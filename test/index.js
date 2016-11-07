@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 
-describe('my test bundle', function () {
-  it('should work', function () {
+describe('my test bundle', () => {
+  it('should work', () => {
     assert(true);
   });
 });

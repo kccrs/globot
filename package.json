@@ -1,5 +1,5 @@
 {
-  "name": "glowbot",
+  "name": "GloBot",
   "version": "1.0.0",
   "description": "An interactive, choose-your-own-adventure style children's book built with React and using text-to-speech technology.",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kccrs/glowbot.git"
+    "url": "git+https://github.com/kccrs/globot.git"
   },
   "author": "Casey Cross",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kccrs/glowbot/issues"
+    "url": "https://github.com/kccrs/globot/issues"
   },
-  "homepage": "https://github.com/kccrs/glowbot#readme",
+  "homepage": "https://github.com/kccrs/globot#readme",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.3.2",

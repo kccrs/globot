@@ -64,10 +64,6 @@ export default class StoryPage extends Component {
   };
 };
 
-// { this.props.choices.map(choice) {
-//   return <Button className="choice button" text={choice.text} nextPage={choice.nextPage} />
-// }}
-
 StoryPage.contextTypes = {
   router: React.PropTypes.object
 }

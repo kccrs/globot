@@ -13,11 +13,3 @@ export default class Button extends Component {
     );
   }
 }
-
-// going to have the following buttons:
-
-// start DONE
-// nav button to next part of story DONE
-// start over button (in header and/or at end points in story) DONE
-// text to speech button
-// color changer button

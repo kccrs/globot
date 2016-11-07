@@ -1,5 +1,28 @@
 .story {
   background-color: transparentize(white, .30);
   color: black;
-  padding: 5px 50px 10px;
+  padding: 5px 50px;
+  margin-bottom: 5px;
+}
+
+.printed-text {
+  padding-bottom: 5px;
+}
+.read-aloud {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.choices {
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+select {
+  height: 30px;
+  font-size: 20px;
+  margin-left: 8px;
 }

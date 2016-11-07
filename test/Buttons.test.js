@@ -3,13 +3,13 @@ import { shallow, mount } from 'enzyme';
 import { assert, expect } from 'chai';
 import sinon from 'sinon';
 
-import Buttons from '../components/Buttons';
+import Button from '../components/Button';
 
-describe('Buttons', () => {
+describe('Button', () => {
 
   context('shallow tests', () => {
     const onClickStub = sinon.spy();
-    const button = shallow(<Buttons onClick={onClickStub}/>);
+    const button = shallow(<Button onClick={onClickStub}/>);
 
     it('renders as a <button>', () => {
       assert.equal(button.type(), 'button');

@@ -4,7 +4,7 @@ import { assert, expect } from 'chai';
 import sinon from 'sinon';
 
 import Application from '../components/Application';
-import Buttons from '../components/Buttons';
+import Button from '../components/Button';
 
 describe('Application', () => {
 
@@ -16,7 +16,7 @@ describe('Application', () => {
     });
 
     it('has an onStart Button component', () => {
-      assert.lengthOf(wrapper.find('Buttons'), 1);
+      assert.lengthOf(wrapper.find('Button'), 1);
     });
 
   });
@@ -26,9 +26,9 @@ describe('Application', () => {
     const startButton = wrapper.find('button');
     const onStartStub = sinon.spy();
 
-    it('should activate the onClick function on click', () => {
-      startButton.simulate('click');
-      assert.isFunction(onStartStub);
-    });
+    // it('should activate the onClick function on click', () => {
+    //   startButton.simulate('click');
+    //   assert.isFunction(onStartStub);
+    // });
   });
 });

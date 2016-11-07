@@ -19,7 +19,7 @@ const storyText = {
     pageText:
               '"Oh no! What happened to my glow spot?!  What should I do?  I can\'t be GloBot the robot without a glow spot!  Should I turn my power off or ask my best friend Janky for help?"',
     imageUrl: '../content/images/oh-no.svg',
-    imageClassName: 'surprised-globot',
+    imageClassName: 'oh-no',
     imageAlt: 'GloBot looks surprised that her glow is gone',
     choiceButton: {
                     visible: 'visible',
@@ -66,10 +66,10 @@ const storyText = {
   },
 
   page5: {
-    pageText: 'Oh no!  GloBot is trapped forever in a never-ending sea of slimy, sticky goo!  THE END.',
-    imageUrl: '',
-    imageClassName: '',
-    imageAlt: '',
+    pageText: 'Oh no!  GloBot is trapped in a never-ending sea of slimy, sticky goo!  THE END.',
+    imageUrl: '../content/images/surprised-globot.svg',
+    imageClassName: 'surprised-bot',
+    imageAlt: 'GloBot is slowly spinning in a sticky planet as she is trapped in goo.',
     choiceButton: {
                     visible: 'hidden',
                   },
@@ -80,18 +80,18 @@ const storyText = {
 
   page6: {
     pageText: '',
-    imageUrl: '',
-    imageClassName: '',
-    imageAlt: '',
+    imageUrl: '../content/images/friends.svg',
+    imageClassName: 'friends friends-color',
+    imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
     choiceButton: {
                     visible: 'visible',
-                    text: 'Yes!',
-                    result: 'page6'
+                    text: 'Choose A',
+                    result: 'page7'
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'No Way!',
-                    result: 'page7'
+                    text: 'Choose B',
+                    result: 'page8'
                   }
   },
 
