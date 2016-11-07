@@ -47,22 +47,21 @@ h2 {
 }
 
 button {
-  @include font-size(24px);
+  @include font-size(18px);
   background-color: $color-space-medium;
   border-radius: 40px;
   border: none;
   color: $color-space;
-  display: inline-block;
+  // display: inline-block;
   font-family: $font-home-page-secondary;
-
   height: 50px;
   letter-spacing: .05em;
   // margin: 20px auto;
-  min-width: 160px;
+  width: 85px;
   &:hover {
     background-color: transparentize($color-space-light, .3);
     color: white;
-    min-height: 55px;
-    min-width: 200px;
+    // min-height: 55px;
+    // min-width: 120px;
   }
 }

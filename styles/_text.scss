@@ -1,8 +1,9 @@
 .story {
   background-color: transparentize(white, .30);
   color: black;
-  padding: 5px 50px;
+  padding: 5px 10px;
   margin-bottom: 5px;
+  margin-top: 50px;
 }
 
 .printed-text {
@@ -16,13 +17,12 @@
   margin: 0 auto;
 }
 
-.choices {
-  font-size: 20px;
-  padding-top: 15px;
+.read-text {
+  font-size: 22px;
+  width: 150px;
 }
-
-select {
-  height: 30px;
-  font-size: 20px;
-  margin-left: 8px;
-}
+// .choices {
+//   font-size: 20px;
+//   padding-top: 15px;
+// }
+//
