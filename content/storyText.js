@@ -46,7 +46,7 @@ const storyText = {
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'Some Place',
+                    text: 'It\'s a secret',
                     result: 'page6'
                   }
   },
@@ -66,7 +66,8 @@ const storyText = {
   },
 
   page5: {
-    pageText: 'Oh no!  GloBot is trapped in a swirling sea of slimy, sticky goo!  THE END.',
+    pageText:
+              'Oh no!  GloBot is trapped in a swirling sea of slimy, sticky goo!  THE END.',
     imageUrl: '../content/images/surprised-globot.svg',
     imageClassName: 'surprised-bot',
     imageAlt: 'GloBot is slowly spinning in a sticky planet as she is trapped in goo.',
@@ -79,38 +80,75 @@ const storyText = {
   },
 
   page6: {
-    pageText: '',
-    imageUrl: '../content/images/friends.svg',
-    imageClassName: 'friends friends-color',
-    imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
+    pageText:
+              '"Hello sir! Do you know where I can find GloGurt?" asked GloBot. "That\s a secret! But you\'re in luck because I happen to sell secrets." said the shopkeeper. "Ok, how much does a secret cost?" GloBot replied. "I\'ll make you a deal... your friend there has a pretty nice tie, that ought to do it." Janky hands over the tie in exchange for a large box." "What\'s this?" he asked. "That\'s a secret! HAHAHA!"',
+    imageUrl: '../content/images/mystery-box.svg',
+    imageClassName: 'mystery-box',
+    imageAlt: 'A picture of GloBot and Janky at a stand that says "Secrets for Sale!"',
     choiceButton: {
                     visible: 'visible',
-                    text: 'Choose A',
+                    text: 'Open the box',
                     result: 'page7'
                   },
     secondChoiceButton: {
-                    visible: 'visible',
-                    text: 'Choose B',
-                    result: 'page8'
+                    visible: 'hidden',
+                    text: '',
+                    result: ''
                   }
   },
 
   page7: {
-    pageText: '',
-    imageUrl: '',
-    imageClassName: '',
-    imageAlt: '',
+    pageText:
+              '"Aw man! It\'s just a box of cheese!  We got ripped off!" GloBot cried. "Ooh cheese!!" exclaimed Janky, "I love cheese!" "Janky, you\'re not helping." "Excuse me, I overheard you telling the shopkeeper you were searching for GloGurt, is that right?" said the mysterious man in the spacesuit. "YES! Do you know where we can find some?" "I sure do, but it will cost you that box of cheese. I haven\'t eaten cheese since I left the Blorg galaxy!" "It\'s a deal!" GloBot exclaimed. The spaceman replied, "You should be able to find some at the GloGurt factory, just take a left at the Twin Planets, you can\'t miss it."',
+    imageUrl: '../content/images/box-o-cheese.svg',
+    imageClassName: 'box-o-cheese',
+    imageAlt: 'GloBot, Janky, a giant box of cheese, and a mysterious spaceman',
     choiceButton: {
                     visible: 'visible',
-                    text: 'Yes!',
-                    result: 'page6'
+                    text: 'To the Factory!',
+                    result: 'page8'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                    text: '',
+                    result: ''
+                  }
+  },
+  page8: {
+    pageText:
+              '"There it is!  Shoot, it seems to be locked! It doesn\'t look like anyone is in there. What do you think?  Should we try to break in?"',
+    imageUrl: '../content/images/glogurt-factory.svg',
+    imageClassName: 'glogurt-factory',
+    imageAlt: 'GloBot and Janky arrive to find the GloGurt factory is locked.',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Yes',
+                    result: 'page9'
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'No Way!',
-                    result: 'page7'
+                    text: 'No way!',
+                    result: 'page10'
                   }
   },
+  page9: {
+    pageText:
+              'Busted!  Janky and GloBot are arrested by a GloGurt factory security guard.  THE END.',
+    imageUrl: '../content/images/uh-oh.svg',
+    imageClassName: 'uh-oh',
+    imageAlt: 'GloBot and Janky are arrested by the police for trying to break in to the GloGurt factory.',
+    choiceButton: {
+                    visible: 'hidden',
+                    text: '',
+                    result: ''
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                    text: '',
+                    result: ''
+                  }
+  },
+
 
 };
 

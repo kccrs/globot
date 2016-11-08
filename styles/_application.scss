@@ -73,5 +73,9 @@ button {
   }
   @include breakpoint($medium) {
     @include font-size(26px);
+    min-width: 150px;
+  }
+  @include breakpoint($large) {
+    min-width: 200px;
   }
 }
