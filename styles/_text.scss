@@ -1,9 +1,20 @@
 .story {
   background-color: transparentize(white, .30);
-  color: black;
+  color: $color-space;
   padding: 5px 10px;
   margin-bottom: 5px;
   margin-top: 50px;
+}
+
+p {
+  @include font-size(20px);
+  color: $color-space;
+  margin-top: 10px;
+  text-align: center;
+  @include breakpoint(500px) {
+    @include font-size(24px);
+    padding: 3px;
+  }
 }
 
 .printed-text {
@@ -18,7 +29,7 @@
 }
 
 .read-text {
-  font-size: 22px;
+  @include font-size(22px);
   width: 150px;
 }
 // .choices {

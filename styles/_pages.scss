@@ -1,9 +1,23 @@
 // PAGE ONE
 
 .sleeping-globot {
-  width: 90%;
-  margin-left: 5%;
+  max-width: 70%;
+  max-height: 45vh;
+  margin-left: 15%;
   margin-top: 10%;
+  @include breakpoint($small) {
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+  @include breakpoint(490px) {
+    margin-left: 15%;
+  }
+  @include breakpoint(540px) {
+    margin-left: 25%;
+  }
+  @include breakpoint($medium) {
+    margin-left: 30%;
+  }
 }
 
 // PAGE TWO
@@ -13,6 +27,27 @@
   margin-left: 3%;
   margin-top: 20%;
   width: 95%;
+  @include breakpoint($small) {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+  }
+  @include breakpoint(600px) {
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 75%;
+  }
+  @include breakpoint($medium) {
+    width: 70%;
+    margin-top: 2%;
+  }
+  @include breakpoint(810px) {
+    width: 60%;
+    margin-left: 22%;
+  }
+  @include breakpoint($extra-large) {
+    width: 50%;
+  }
 }
 
 // PAGE THREE
@@ -22,8 +57,24 @@
 }
 
 .friends {
-  margin: 15% 0 5% 5%;
-  width: 90%;
+  margin: 10% 0 5% 10%;
+  width: 80%;
+  @include breakpoint(500px) {
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 15%;
+  }
+  @include breakpoint(600px) {
+    width: 60%;
+    margin-left: 20%;
+  }
+  @include breakpoint($large) {
+    width: 55%;
+  }
+  @include breakpoint($extra-large) {
+    width: 45%;
+    margin-left: 25%;
+  }
 }
 
 // PAGE FOUR
@@ -33,6 +84,9 @@
   margin-top: 10%;
   margin-bottom: 5%;
   width: 60%;
+  @include breakpoint($small) {
+    margin-top: 5%;
+  }
 }
 
 // PAGE FIVE
@@ -46,6 +100,9 @@
   margin: 36% 0 25% 30%;
   animation: infinite-spinning linear 4s infinite,
   shrinking linear 10s infinite alternate;
+  @include breakpoint($small) {
+    margin-top: 30%;
+  }
 }
 
 @keyframes infinite-spinning {

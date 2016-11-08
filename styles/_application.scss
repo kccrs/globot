@@ -1,13 +1,12 @@
 html {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   height: 100%;
   min-width: 100%;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  // box-sizing: inherit;
 }
-
 
 .Application {
   background-size: cover;
@@ -16,11 +15,7 @@ html {
 }
 
 .titles {
-  // background-image: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparentize($color-space, .95) 75%);
-//   // height: 250px;
-//   // margin: 30% auto;
-  padding-top: 30vh;
-//   width: 50vw;
+  padding: 30vh 5vw 0;
 }
 
 h1 {
@@ -32,11 +27,15 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 38px;
   font-family: $font-home-page;
   letter-spacing: .1em;
   padding: 10px 0;
   text-align: center;
+  margin-bottom: 10%;
+  @include breakpoint($large) {
+    margin-bottom: 5%
+  }
 }
 
 .buttonContainer {
@@ -47,21 +46,32 @@ h2 {
 }
 
 button {
-  @include font-size(18px);
+  @include font-size(20px);
   background-color: $color-space-medium;
   border-radius: 40px;
   border: none;
   color: $color-space;
-  // display: inline-block;
   font-family: $font-home-page-secondary;
   height: 50px;
   letter-spacing: .05em;
-  // margin: 20px auto;
-  width: 85px;
+  padding: 0 5px;
+  min-width: 75px;
+  max-width: 200px;
+  .start-button {
+    @include font-size(32px);
+    width: 150px;
+  }
   &:hover {
     background-color: transparentize($color-space-light, .3);
     color: white;
-    // min-height: 55px;
-    // min-width: 120px;
+  }
+  @include breakpoint($small) {
+    @include font-size(20px);
+    height: 55px;
+    padding: 3px 0;
+    min-width: 120px;
+  }
+  @include breakpoint($medium) {
+    @include font-size(26px);
   }
 }
