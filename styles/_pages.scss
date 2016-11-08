@@ -80,12 +80,28 @@
 // PAGE FOUR
 
 .power-down {
-  margin-left: 20%;
+  margin-left: 25%;
   margin-top: 10%;
   margin-bottom: 5%;
-  width: 60%;
+  width: 50%;
   @include breakpoint($small) {
-    margin-top: 5%;
+    margin-left: 30%;
+    margin-top: 15%;
+    width: 43%;
+  }
+  @include breakpoint(600px) {
+    width: 38%;
+  }
+  @include breakpoint($medium) {
+    margin-top: 5%
+  }
+  @include breakpoint(800px) {
+    width: 30%;
+    margin-left: 35%;
+  }
+  @include breakpoint($extra-large) {
+    width: 25%;
+    margin-left: 40%;
   }
 }
 
@@ -102,6 +118,18 @@
   shrinking linear 10s infinite alternate;
   @include breakpoint($small) {
     margin-top: 30%;
+  }
+  @include breakpoint(600px) {
+    margin-top: 25%;
+  }
+  @include breakpoint($medium) {
+    margin-top: 10%;
+  }
+  @include breakpoint(800px) {
+    margin-top: 5%;
+  }
+  @include breakpoint($extra-large) {
+    margin-top: 2%;
   }
 }
 
@@ -125,16 +153,27 @@
   }
 }
 
+@include breakpoint($large) {
+  @keyframes shrinking {
+    0% {
+      width: 30%;
+    }
+    50% {
+      margin-left: 45%;
+      margin-top: 45%;
+      width: 5%;
+    }
+    100% {
+      width: 30%;
+    }
+  }
+}
+
 // PAGE SIX
 
 .page6 {
   background: no-repeat url('/../content/images/background/green-saturn.png') center center fixed;
 }
-
-// #whatz {
-//   fill: red;
-//   stroke: black;
-// }
 
 // PAGE SEVEN
 // PAGE EIGHT
