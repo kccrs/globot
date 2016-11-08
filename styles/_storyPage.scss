@@ -3,8 +3,6 @@
   @include full;
   background-size: cover;
   background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
-  // display: flex;
-  // flex-direction: column;
   height: 100vh;
   min-height: 100%;
   position: relative;
@@ -12,49 +10,30 @@
 
 .hidden {
   visibility: hidden;
-  // width: 0;
+}
+
+.pageImage {
+  min-height: 50%;
 }
 
 footer {
   @include full;
-  // @include clearfix;
   position: absolute;
   bottom: 0;
-  // @include span(9);
-  // display: flex;
-  // justify-content: space-around;
   height: 80px;
-  // margin-top: 10px;
-
   padding: 0 10px 10px;
 }
 
 .first-choice-button,
 .second-choice-button,
 .start-over {
-  // @include span(1 of 3);
   @include gallery(1 of 3);
-  // @include gutters(3em);
-  // margin: gutter(2em);
-}
-
-.second-choice-button {
-  // @include push(5 of 12);
 }
 
 .start-over {
-  // @include span(last);
   background-color: $color-space-light;
   color: saturate($color-space, 70);
-  // margin-right: 10px;
-  // padding: 0 10px;
   &:hover {
     background-color: transparentize($color-space-light, .40);
   }
-}
-
-.pageText {
-  margin-right: 5px;
-  // position: absolute;
-  // bottom: 0;
 }
