@@ -41,12 +41,12 @@ const storyText = {
     imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
     choiceButton: {
                     visible: 'visible',
-                    text: 'Go to Planet Goo',
+                    text: 'Planet Goo',
                     result: 'page5'
                   },
     secondChoiceButton: {
                     visible: 'visible',
-                    text: 'Follow a colorful comet',
+                    text: 'Some Place',
                     result: 'page6'
                   }
   },
@@ -66,7 +66,7 @@ const storyText = {
   },
 
   page5: {
-    pageText: 'Oh no!  GloBot is trapped in a never-ending sea of slimy, sticky goo!  THE END.',
+    pageText: 'Oh no!  GloBot is trapped in a swirling sea of slimy, sticky goo!  THE END.',
     imageUrl: '../content/images/surprised-globot.svg',
     imageClassName: 'surprised-bot',
     imageAlt: 'GloBot is slowly spinning in a sticky planet as she is trapped in goo.',

@@ -29,11 +29,11 @@ export default class StoryPage extends Component {
 
     return (
       <div className={pageClass}>
-        <main className="pageText">
+        <section className="pageImage">
           <Image textKey={currentPage} />
+        </section>
+        <section className="pageText">
           <Text textKey={currentPage} />
-        </main>
-        <section className="sidebar">
           <nav className="nav-container">
 
             <section className="first-choice">
@@ -58,6 +58,7 @@ export default class StoryPage extends Component {
               text="Start Over"
             />
           </nav>
+
         </section>
       </div>
     );

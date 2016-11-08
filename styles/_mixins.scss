@@ -4,6 +4,19 @@
 }
 
 @mixin font-size($size) {
-  font-size: $size;
+  // font-size: $size;
   font-size: calculateRem($size);
+}
+
+// Media Queries
+
+$small: 400px;
+$medium: 710px;
+$large: 900px;
+$extra-large: 1000px;
+
+@mixin breakpoint($bp) {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
 }
