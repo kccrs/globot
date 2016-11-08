@@ -33401,7 +33401,7 @@
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
-	      text: 'Some Place',
+	      text: 'It\'s a secret',
 	      result: 'page6'
 	    }
 	  },
@@ -33433,36 +33433,68 @@
 	  },
 
 	  page6: {
-	    pageText: '',
-	    imageUrl: '../content/images/friends.svg',
-	    imageClassName: 'friends friends-color',
-	    imageAlt: 'A picture of GloBot and Janky, GloBot\'s hardscrabble best friend',
+	    pageText: '"Hello sir! Do you know where I can find GloGurt?" asked GloBot. "That\s a secret! But you\'re in luck because I happen to sell secrets." said the shopkeeper. "Ok, how much does a secret cost?" GloBot replied. "I\'ll make you a deal... your friend there has a pretty nice tie, that ought to do it." Janky hands over the tie in exchange for a large box." "What\'s this?" he asked. "That\'s a secret! HAHAHA!"',
+	    imageUrl: '../content/images/mystery-box.svg',
+	    imageClassName: 'mystery-box',
+	    imageAlt: 'A picture of GloBot and Janky at a stand that says "Secrets for Sale!"',
 	    choiceButton: {
 	      visible: 'visible',
-	      text: 'Choose A',
+	      text: 'Open the box',
 	      result: 'page7'
 	    },
 	    secondChoiceButton: {
-	      visible: 'visible',
-	      text: 'Choose B',
-	      result: 'page8'
+	      visible: 'hidden',
+	      text: '',
+	      result: ''
 	    }
 	  },
 
 	  page7: {
-	    pageText: '',
-	    imageUrl: '',
-	    imageClassName: '',
-	    imageAlt: '',
+	    pageText: '"Aw man! It\'s just a box of cheese!  We got ripped off!" GloBot cried. "Ooh cheese!!" exclaimed Janky, "I love cheese!" "Janky, you\'re not helping." "Excuse me, I overheard you telling the shopkeeper you were searching for GloGurt, is that right?" said the mysterious man in the spacesuit. "YES! Do you know where we can find some?" "I sure do, but it will cost you that box of cheese. I haven\'t eaten cheese since I left the Blorg galaxy!" "It\'s a deal!" GloBot exclaimed. The spaceman replied, "You should be able to find some at the GloGurt factory, just take a left at the Twin Planets, you can\'t miss it."',
+	    imageUrl: '../content/images/box-o-cheese.svg',
+	    imageClassName: 'box-o-cheese',
+	    imageAlt: 'GloBot, Janky, a giant box of cheese, and a mysterious spaceman',
 	    choiceButton: {
 	      visible: 'visible',
-	      text: 'Yes!',
-	      result: 'page6'
+	      text: 'To the Factory!',
+	      result: 'page8'
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden',
+	      text: '',
+	      result: ''
+	    }
+	  },
+	  page8: {
+	    pageText: '"There it is!  Shoot, it seems to be locked! It doesn\'t look like anyone is in there. What do you think?  Should we try to break in?"',
+	    imageUrl: '../content/images/glogurt-factory.svg',
+	    imageClassName: 'glogurt-factory',
+	    imageAlt: 'GloBot and Janky arrive to find the GloGurt factory is locked.',
+	    choiceButton: {
+	      visible: 'visible',
+	      text: 'Yes',
+	      result: 'page9'
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
-	      text: 'No Way!',
-	      result: 'page7'
+	      text: 'No way!',
+	      result: 'page10'
+	    }
+	  },
+	  page9: {
+	    pageText: 'Busted!  Janky and GloBot are arrested by a GloGurt factory security guard.  THE END.',
+	    imageUrl: '../content/images/uh-oh.svg',
+	    imageClassName: 'uh-oh',
+	    imageAlt: 'GloBot and Janky are arrested by the police for trying to break in to the GloGurt factory.',
+	    choiceButton: {
+	      visible: 'hidden',
+	      text: '',
+	      result: ''
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden',
+	      text: '',
+	      result: ''
 	    }
 	  }
 
@@ -33617,7 +33649,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  box-sizing: border-box;\n  height: 100%;\n  min-width: 100%; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n\n.titles {\n  padding: 30vh 5vw 0; }\n\nh1 {\n  font-size: 60px;\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  font-size: 38px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center;\n  margin-bottom: 10%; }\n  @media screen and (min-width: 900px) {\n    h2 {\n      margin-bottom: 5%; } }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  font-size: 1.25rem;\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  height: 50px;\n  letter-spacing: .05em;\n  min-width: 90px;\n  max-width: 200px; }\n  button .start-button {\n    font-size: 2rem;\n    width: 150px; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white; }\n  @media screen and (min-width: 400px) {\n    button {\n      font-size: 1.25rem;\n      height: 55px;\n      padding: 3px 0; } }\n  @media screen and (min-width: 710px) {\n    button {\n      font-size: 1.625rem; } }\n\n.StoryPage {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  min-height: 100%;\n  position: relative; }\n\n.hidden {\n  visibility: hidden;\n  width: 0; }\n\np {\n  color: #271530;\n  font-size: 24px;\n  margin-top: 10px;\n  text-align: center; }\n  @media screen and (min-width: 500px) {\n    p {\n      padding: 3px; } }\n\nnav {\n  display: flex;\n  justify-content: space-around;\n  height: 80px;\n  margin-top: 10px;\n  padding-top: 10px; }\n\n.first-choice-button {\n  margin-left: 10px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.6);\n  color: #2e0045;\n  margin-right: 10px; }\n  .start-over:hover {\n    background-color: #c4a1d6; }\n\n.pageText {\n  position: absolute;\n  bottom: 0;\n  width: 100%; }\n\n.story {\n  background-color: rgba(255, 255, 255, 0.7);\n  color: #271530;\n  padding: 5px 10px;\n  margin-bottom: 5px;\n  margin-top: 50px; }\n\n.printed-text {\n  padding-bottom: 5px; }\n\n.read-aloud {\n  display: flex;\n  justify-content: space-around;\n  padding: 5px;\n  width: 60%;\n  margin: 0 auto; }\n\n.read-text {\n  font-size: 22px;\n  width: 150px; }\n\n.sleeping-globot {\n  max-width: 70%;\n  max-height: 45vh;\n  margin-left: 15%;\n  margin-top: 10%; }\n  @media screen and (min-width: 400px) {\n    .sleeping-globot {\n      margin-top: 5%;\n      margin-left: 10%; } }\n  @media screen and (min-width: 490px) {\n    .sleeping-globot {\n      margin-left: 15%; } }\n  @media screen and (min-width: 540px) {\n    .sleeping-globot {\n      margin-left: 25%; } }\n  @media screen and (min-width: 710px) {\n    .sleeping-globot {\n      margin-left: 30%; } }\n\n.oh-no {\n  margin-bottom: 10%;\n  margin-top: 20%;\n  width: 95%; }\n  @media screen and (min-width: 400px) {\n    .oh-no {\n      margin-top: 10%;\n      margin-left: 10%;\n      width: 80%; } }\n  @media screen and (min-width: 600px) {\n    .oh-no {\n      margin-top: 5%;\n      margin-left: 15%;\n      width: 75%; } }\n  @media screen and (min-width: 710px) {\n    .oh-no {\n      width: 70%;\n      margin-top: 2%; } }\n  @media screen and (min-width: 810px) {\n    .oh-no {\n      width: 60%;\n      margin-left: 22%; } }\n  @media screen and (min-width: 1000px) {\n    .oh-no {\n      width: 50%; } }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  margin: 15% 0 5% 5%;\n  width: 90%; }\n\n.power-down {\n  margin-left: 20%;\n  margin-top: 10%;\n  margin-bottom: 5%;\n  width: 60%; }\n  @media screen and (min-width: 400px) {\n    .power-down {\n      margin-top: 5%; } }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.png\") center center fixed; }\n\n.surprised-bot {\n  width: 40%;\n  margin: 36% 0 25% 30%;\n  animation: infinite-spinning linear 4s infinite, shrinking linear 10s infinite alternate; }\n  @media screen and (min-width: 400px) {\n    .surprised-bot {\n      margin-top: 30%; } }\n\n@keyframes infinite-spinning {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes shrinking {\n  0% {\n    width: 40%; }\n  50% {\n    margin-left: 45%;\n    margin-top: 45%;\n    width: 5%; }\n  100% {\n    width: 40%; } }\n\n.page6 {\n  background: no-repeat url(\"/../content/images/background/green-saturn.png\") center center fixed; }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  height: 100%;\n  min-width: 100%; }\n\n.Application {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n\n.titles {\n  padding: 30vh 5vw 0; }\n\nh1 {\n  font-size: 60px;\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  font-size: 38px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center;\n  margin-bottom: 10%; }\n  @media screen and (min-width: 900px) {\n    h2 {\n      margin-bottom: 5%; } }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  font-size: 1.25rem;\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  height: 50px;\n  letter-spacing: .05em;\n  padding: 0 5px;\n  min-width: 75px;\n  max-width: 200px; }\n  button .start-button {\n    font-size: 2rem;\n    width: 150px; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white; }\n  @media screen and (min-width: 400px) {\n    button {\n      font-size: 1.25rem;\n      height: 55px;\n      padding: 3px 0;\n      min-width: 120px; } }\n  @media screen and (min-width: 710px) {\n    button {\n      font-size: 1.625rem;\n      min-width: 150px; } }\n  @media screen and (min-width: 900px) {\n    button {\n      min-width: 200px; } }\n\n.StoryPage {\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  min-height: 100%;\n  position: relative; }\n\n.hidden {\n  visibility: hidden;\n  width: 0; }\n\nnav {\n  display: flex;\n  justify-content: space-around;\n  height: 80px;\n  margin-top: 10px;\n  padding-top: 10px; }\n\n.first-choice-button {\n  margin-left: 10px; }\n\n.second-choice-button {\n  margin: 0 4px; }\n\n.start-over {\n  background-color: rgba(196, 161, 214, 0.6);\n  color: #2e0045;\n  margin-right: 10px;\n  padding: 0 10px; }\n  .start-over:hover {\n    background-color: #c4a1d6; }\n\n.pageText {\n  position: absolute;\n  bottom: 0;\n  width: 100%; }\n\n.story {\n  background-color: rgba(255, 255, 255, 0.7);\n  color: #271530;\n  padding: 5px 10px;\n  margin-bottom: 5px;\n  margin-top: 50px; }\n\np {\n  font-size: 1.25rem;\n  color: #271530;\n  margin-top: 10px;\n  text-align: center; }\n  @media screen and (min-width: 500px) {\n    p {\n      font-size: 1.5rem;\n      padding: 3px; } }\n\n.printed-text {\n  padding-bottom: 5px; }\n\n.read-aloud {\n  display: flex;\n  justify-content: space-around;\n  padding: 5px;\n  width: 60%;\n  margin: 0 auto; }\n\n.read-text {\n  font-size: 1.375rem;\n  width: 150px; }\n\n.sleeping-globot {\n  max-width: 70%;\n  max-height: 45vh;\n  margin-left: 15%;\n  margin-top: 10%; }\n  @media screen and (min-width: 400px) {\n    .sleeping-globot {\n      margin-top: 5%;\n      margin-left: 10%; } }\n  @media screen and (min-width: 490px) {\n    .sleeping-globot {\n      margin-left: 15%; } }\n  @media screen and (min-width: 540px) {\n    .sleeping-globot {\n      margin-left: 25%; } }\n  @media screen and (min-width: 710px) {\n    .sleeping-globot {\n      margin-left: 30%; } }\n\n.oh-no {\n  margin-bottom: 10%;\n  margin-left: 3%;\n  margin-top: 20%;\n  width: 95%; }\n  @media screen and (min-width: 400px) {\n    .oh-no {\n      margin-top: 10%;\n      margin-left: 10%;\n      width: 80%; } }\n  @media screen and (min-width: 600px) {\n    .oh-no {\n      margin-top: 5%;\n      margin-left: 15%;\n      width: 75%; } }\n  @media screen and (min-width: 710px) {\n    .oh-no {\n      width: 70%;\n      margin-top: 2%; } }\n  @media screen and (min-width: 810px) {\n    .oh-no {\n      width: 60%;\n      margin-left: 22%; } }\n  @media screen and (min-width: 1000px) {\n    .oh-no {\n      width: 50%; } }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  margin: 10% 0 5% 10%;\n  width: 80%; }\n  @media screen and (min-width: 500px) {\n    .friends {\n      width: 70%;\n      margin-top: 5%;\n      margin-left: 15%; } }\n  @media screen and (min-width: 600px) {\n    .friends {\n      width: 60%;\n      margin-left: 20%; } }\n  @media screen and (min-width: 900px) {\n    .friends {\n      width: 55%; } }\n  @media screen and (min-width: 1000px) {\n    .friends {\n      width: 45%;\n      margin-left: 25%; } }\n\n.power-down {\n  margin-left: 25%;\n  margin-top: 10%;\n  margin-bottom: 5%;\n  width: 50%; }\n  @media screen and (min-width: 400px) {\n    .power-down {\n      margin-left: 30%;\n      margin-top: 15%;\n      width: 43%; } }\n  @media screen and (min-width: 600px) {\n    .power-down {\n      width: 38%; } }\n  @media screen and (min-width: 710px) {\n    .power-down {\n      margin-top: 5%; } }\n  @media screen and (min-width: 800px) {\n    .power-down {\n      width: 30%;\n      margin-left: 35%; } }\n  @media screen and (min-width: 1000px) {\n    .power-down {\n      width: 25%;\n      margin-left: 40%; } }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.png\") center center fixed; }\n\n.surprised-bot {\n  width: 40%;\n  margin: 36% 0 25% 30%;\n  animation: infinite-spinning linear 4s infinite, shrinking linear 10s infinite alternate; }\n  @media screen and (min-width: 400px) {\n    .surprised-bot {\n      margin-top: 30%; } }\n  @media screen and (min-width: 600px) {\n    .surprised-bot {\n      margin-top: 25%; } }\n  @media screen and (min-width: 710px) {\n    .surprised-bot {\n      margin-top: 10%; } }\n  @media screen and (min-width: 800px) {\n    .surprised-bot {\n      margin-top: 5%; } }\n  @media screen and (min-width: 1000px) {\n    .surprised-bot {\n      margin-top: 2%; } }\n\n@keyframes infinite-spinning {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes shrinking {\n  0% {\n    width: 40%; }\n  50% {\n    margin-left: 45%;\n    margin-top: 45%;\n    width: 5%; }\n  100% {\n    width: 40%; } }\n\n@media screen and (min-width: 900px) {\n  @keyframes shrinking {\n    0% {\n      width: 30%; }\n    50% {\n      margin-left: 45%;\n      margin-top: 45%;\n      width: 5%; }\n    100% {\n      width: 30%; } } }\n\n.page6 {\n  background: no-repeat url(\"/../content/images/background/saturn2.jpg\") center center fixed; }\n\n.mystery-box {\n  max-width: 70%;\n  margin-top: 10%;\n  margin-left: 10%; }\n\n.box-o-cheese {\n  max-width: 80%;\n  margin: 5% 0 0 10%; }\n\n.glogurt-factory {\n  margin-left: 15%; }\n\n.uh-oh {\n  margin-left: 5%;\n  margin-top: 5%; }\n", ""]);
 
 	// exports
 
