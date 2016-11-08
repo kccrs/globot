@@ -17,6 +17,7 @@
 
 footer {
   @include full;
+  // @include clearfix;
   position: absolute;
   bottom: 0;
   // @include span(9);
@@ -24,13 +25,17 @@ footer {
   // justify-content: space-around;
   height: 80px;
   // margin-top: 10px;
-  padding-bottom: 10px;
+
+  padding: 0 10px 10px;
 }
 
 .first-choice-button,
 .second-choice-button,
 .start-over {
-  @include span(1 of 3);
+  // @include span(1 of 3);
+  @include gallery(1 of 3);
+  // @include gutters(3em);
+  // margin: gutter(2em);
 }
 
 .second-choice-button {
@@ -38,7 +43,7 @@ footer {
 }
 
 .start-over {
-  @include span(last);
+  // @include span(last);
   background-color: $color-space-light;
   color: saturate($color-space, 70);
   // margin-right: 10px;
