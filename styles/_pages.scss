@@ -1,22 +1,42 @@
+// ALL PAGES
+.main-image {
+  @include push(1 of 12);
+  height: 40vh;
+  margin-top: 15%;
+  @include breakpoint($small) {
+    @include push(3 of 12);
+  }
+  @include breakpoint(500px) {
+    @include push(3 of 12);
+    height: 45vh;
+  }
+  @include breakpoint($medium) {
+    @include push(4 of 12);
+    height: 50vh;
+    margin-top: 10%;
+  }
+}
+
 // PAGE ONE
 
 .sleeping-globot {
-  max-width: 70%;
-  max-height: 45vh;
-  margin-left: 15%;
-  margin-top: 10%;
+  // @include push(1 of 12);
+  // max-width: 70%;
+  // height: 45vh;
+  // margin-left: 15%;
+  // margin-top: 10%;
   @include breakpoint($small) {
-    margin-top: 5%;
-    margin-left: 10%;
+    // margin-top: 5%;
+    // margin-left: 10%;
   }
   @include breakpoint(490px) {
-    margin-left: 15%;
+    // margin-left: 15%;
   }
   @include breakpoint(540px) {
-    margin-left: 25%;
+    // margin-left: 25%;
   }
   @include breakpoint($medium) {
-    margin-left: 30%;
+    // margin-left: 30%;
   }
 }
 

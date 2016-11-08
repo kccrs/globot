@@ -1,9 +1,10 @@
 
 .StoryPage {
+  @include full;
   background-size: cover;
   background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   height: 100vh;
   min-height: 100%;
   position: relative;
@@ -11,38 +12,44 @@
 
 .hidden {
   visibility: hidden;
-  width: 0;
+  // width: 0;
 }
 
-
-nav {
-  display: flex;
-  justify-content: space-around;
+footer {
+  @include full;
+  position: absolute;
+  bottom: 0;
+  // @include span(9);
+  // display: flex;
+  // justify-content: space-around;
   height: 80px;
-  margin-top: 10px;
-  padding-top: 10px;
+  // margin-top: 10px;
+  padding-bottom: 10px;
 }
 
-.first-choice-button {
-  margin-left: 10px;
+.first-choice-button,
+.second-choice-button,
+.start-over {
+  @include span(1 of 3);
 }
 
 .second-choice-button {
-  margin: 0 4px;
+  // @include push(5 of 12);
 }
 
 .start-over {
-  background-color: transparentize($color-space-light, .40);
+  @include span(last);
+  background-color: $color-space-light;
   color: saturate($color-space, 70);
-  margin-right: 10px;
-  padding: 0 10px;
+  // margin-right: 10px;
+  // padding: 0 10px;
   &:hover {
-    background-color: $color-space-light;
+    background-color: transparentize($color-space-light, .40);
   }
 }
 
 .pageText {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin-right: 5px;
+  // position: absolute;
+  // bottom: 0;
 }

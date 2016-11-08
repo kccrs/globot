@@ -1,14 +1,15 @@
 html {
-  // box-sizing: border-box;
+  @include global-box-sizing(border-box);
   height: 100%;
   min-width: 100%;
 }
 
 *, *:before, *:after {
-  // box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .Application {
+  @include container;
   background-size: cover;
   background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
   height: 100vh;
@@ -20,7 +21,7 @@ html {
 
 h1 {
   font-size: 60px;
-  color: lighten($color-space, 40);
+  color: $color-space-medium;
   font-family: $font-home-page-secondary;
   padding: 20px 0;
   text-align: center;
@@ -50,16 +51,17 @@ button {
   background-color: $color-space-medium;
   border-radius: 40px;
   border: none;
+  // display: inline-block;
   color: $color-space;
   font-family: $font-home-page-secondary;
   height: 50px;
   letter-spacing: .05em;
-  padding: 0 5px;
-  min-width: 75px;
-  max-width: 200px;
+  // padding: 0 5px;
+  // min-width: 75px;
+  // max-width: 200px;
   .start-button {
     @include font-size(32px);
-    width: 150px;
+    // width: 150px;
   }
   &:hover {
     background-color: transparentize($color-space-light, .3);
@@ -68,14 +70,14 @@ button {
   @include breakpoint($small) {
     @include font-size(20px);
     height: 55px;
-    padding: 3px 0;
-    min-width: 120px;
+    // padding: 3px 0;
+    // min-width: 120px;
   }
   @include breakpoint($medium) {
     @include font-size(26px);
-    min-width: 150px;
+    // min-width: 150px;
   }
   @include breakpoint($large) {
-    min-width: 200px;
+    // min-width: 200px;
   }
 }

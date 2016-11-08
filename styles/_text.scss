@@ -1,25 +1,27 @@
 .story {
+  @include span(12);
   background-color: transparentize(white, .30);
   color: $color-space;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  margin-top: 50px;
+  // padding: 5px 10px;
+  // margin-bottom: 5px;
+  // margin-top: 50px;
 }
 
 p {
   @include font-size(20px);
   color: $color-space;
-  margin-top: 10px;
+  // margin-top: 10px;
   text-align: center;
   @include breakpoint(500px) {
     @include font-size(24px);
-    padding: 3px;
+    // padding: 3px;
   }
 }
 
 .printed-text {
-  padding-bottom: 5px;
+  // padding-bottom: 5px;
 }
+
 .read-aloud {
   display: flex;
   justify-content: space-around;
@@ -29,11 +31,7 @@ p {
 }
 
 .read-text {
-  @include font-size(22px);
+  @include font-size(24px);
+  background-color: $color-space-light;
   width: 150px;
 }
-// .choices {
-//   font-size: 20px;
-//   padding-top: 15px;
-// }
-//
