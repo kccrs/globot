@@ -1,39 +1,34 @@
 .story {
+  @include squish(1%);
   background-color: transparentize(white, .30);
   color: $color-space;
-  padding: 5px 10px;
-  margin-bottom: 5px;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 100px;
+  width: 98%;
 }
 
 p {
+  @include squish(5%);
   @include font-size(20px);
   color: $color-space;
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   @include breakpoint(500px) {
     @include font-size(24px);
-    padding: 3px;
   }
 }
 
-.printed-text {
-  padding-bottom: 5px;
-}
 .read-aloud {
   display: flex;
   justify-content: space-around;
-  padding: 5px;
+  padding-bottom: 10px;
   width: 60%;
   margin: 0 auto;
 }
 
 .read-text {
-  @include font-size(22px);
+  @include font-size(24px);
+  background-color: $color-space-light;
   width: 150px;
 }
-// .choices {
-//   font-size: 20px;
-//   padding-top: 15px;
-// }
-//

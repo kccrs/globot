@@ -19,7 +19,7 @@ export default class Text extends Component {
 
     return (
       <section className="story">
-        <p className="printed-text">
+        <p>
           {storyText[pageId].pageText}
         </p>
         <div className="read-aloud">

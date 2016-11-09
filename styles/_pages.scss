@@ -1,135 +1,88 @@
-// PAGE ONE
-
-.sleeping-globot {
-  max-width: 70%;
-  max-height: 45vh;
-  margin-left: 15%;
-  margin-top: 10%;
+// ALL PAGES & PAGE ONE
+.main-image {
+  @include push(1 of 12);
+  height: 40vh;
+  margin-top: 15%;
   @include breakpoint($small) {
-    margin-top: 5%;
-    margin-left: 10%;
+    @include push(3 of 12);
   }
-  @include breakpoint(490px) {
-    margin-left: 15%;
-  }
-  @include breakpoint(540px) {
-    margin-left: 25%;
+  @include breakpoint(500px) {
+    @include push(3 of 12);
+    height: 45vh;
   }
   @include breakpoint($medium) {
-    margin-left: 30%;
+    @include push(4 of 12);
+    height: 50vh;
+    margin-top: 10%;
+  }
+  @include breakpoint($large) {
+    margin-top: 5%;
   }
 }
 
 // PAGE TWO
-
 .oh-no {
-  margin-bottom: 10%;
-  margin-left: 3%;
-  margin-top: 20%;
-  width: 95%;
-  @include breakpoint($small) {
-    margin-top: 10%;
-    margin-left: 10%;
-    width: 80%;
-  }
+  height: 32vh;
   @include breakpoint(600px) {
-    margin-top: 5%;
-    margin-left: 15%;
-    width: 75%;
+    height: 40vh;
   }
-  @include breakpoint($medium) {
-    width: 70%;
-    margin-top: 2%;
-  }
-  @include breakpoint(810px) {
-    width: 60%;
-    margin-left: 22%;
-  }
-  @include breakpoint($extra-large) {
-    width: 50%;
+  @include breakpoint($large) {
+    height: 50vh;
   }
 }
 
 // PAGE THREE
-
 .page3 {
   background: no-repeat url('/../content/images/background/blue-space.jpg') center center fixed;
 }
 
 .friends {
-  margin: 10% 0 5% 10%;
-  width: 80%;
-  @include breakpoint(500px) {
-    width: 70%;
-    margin-top: 5%;
-    margin-left: 15%;
+  margin-top: 5%;
+  height: 35vh;
+  @include breakpoint($small) {
+    @include push(1 of 12);
   }
-  @include breakpoint(600px) {
-    width: 60%;
-    margin-left: 20%;
+  @include breakpoint(500px) {
+    @include push(3 of 12);
+  }
+  @include breakpoint($medium) {
+    margin-top: 15%;
   }
   @include breakpoint($large) {
-    width: 55%;
+    @include push(2 of 12);
+    height: 50vh;
+    margin-top: 5%;
   }
   @include breakpoint($extra-large) {
-    width: 45%;
-    margin-left: 25%;
+    @include push(3 of 12);
   }
 }
 
 // PAGE FOUR
-
 .power-down {
-  margin-left: 25%;
-  margin-top: 10%;
-  margin-bottom: 5%;
-  width: 50%;
+  @include push(3 of 12);
   @include breakpoint($small) {
-    margin-left: 30%;
-    margin-top: 15%;
-    width: 43%;
+    @include push(4 of 12);
   }
-  @include breakpoint(600px) {
-    width: 38%;
+  @include breakpoint(550px) {
+    margin-top: 5%;
   }
-  @include breakpoint($medium) {
-    margin-top: 5%
-  }
-  @include breakpoint(800px) {
-    width: 30%;
-    margin-left: 35%;
-  }
-  @include breakpoint($extra-large) {
-    width: 25%;
-    margin-left: 40%;
+  @include breakpoint($large) {
+    @include push(5 of 12);
   }
 }
 
 // PAGE FIVE
-
 .page5 {
   background: no-repeat url('/../content/images/background/disco-space2.png') center center fixed;
 }
 
 .surprised-bot {
-  width: 40%;
-  margin: 36% 0 25% 30%;
+  @include push(4 of 12);
   animation: infinite-spinning linear 4s infinite,
   shrinking linear 10s infinite alternate;
-  @include breakpoint($small) {
-    margin-top: 30%;
-  }
-  @include breakpoint(600px) {
-    margin-top: 25%;
-  }
-  @include breakpoint($medium) {
-    margin-top: 10%;
-  }
-  @include breakpoint(800px) {
-    margin-top: 5%;
-  }
-  @include breakpoint($extra-large) {
-    margin-top: 2%;
+  @include breakpoint($large) {
+    margin-top: 12%;
   }
 }
 
@@ -144,8 +97,6 @@
     width: 40%;
   }
   50% {
-    margin-left: 45%;
-    margin-top: 45%;
     width: 5%;
   }
   100% {
@@ -159,8 +110,6 @@
       width: 30%;
     }
     50% {
-      margin-left: 45%;
-      margin-top: 45%;
       width: 5%;
     }
     100% {
@@ -170,35 +119,71 @@
 }
 
 // PAGE SIX
-
 .page6 {
   background: no-repeat url('/../content/images/background/saturn2.jpg') center center fixed;
 }
 
 .mystery-box {
-  max-width: 70%;
-  margin-top: 10%;
-  margin-left: 10%;
+  @include push(1 of 12);
+  height: 24vh;
+  @include breakpoint($small) {
+    height: 30vh;
+  }
+  @include breakpoint(500px) {
+    @include push(2 of 12);
+    margin-top: 7%;
+  }
+  @include breakpoint($medium) {
+    height: 40vh;
+  }
+  @include breakpoint($extra-large) {
+    @include push(3 of 12);
+  }
 }
 
 // PAGE SEVEN
+.page7 .story {
+  height: 30vh;
+  overflow: scroll;
+  @include breakpoint($medium) {
+    height: 42vh;
+  }
+  @include breakpoint(830px) {
+    height: 35vh;
+  }
+  @include breakpoint($large) {
+    height: 30vh;
+  }
+}
 
 .box-o-cheese {
-  max-width: 80%;
-  margin: 5% 0 0 10%;
+  @include push(0 of 12);
+  height: 35vh;
+  margin-left: 3%;
+  width: 90%;
+  @include breakpoint($medium) {
+    margin-top: 5%;
+  }
 }
 
 // PAGE EIGHT
-
 .glogurt-factory {
-  margin-left: 15%;
+  width: 90%;
+  @include breakpoint($small) {
+    @include push(1 of 12);
+  }
+  @include breakpoint($medium) {
+    @include push(0 of 12);
+    width: 100%;
+  }
 }
 
 // PAGE NINE
-
 .uh-oh {
-  margin-left: 5%;
-  margin-top: 5%;
+  width: 87%;
+  @include breakpoint($small) {
+    @include push(1 of 12);
+  }
 }
 
 // PAGE TEN

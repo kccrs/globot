@@ -16,7 +16,26 @@ $large: 900px;
 $extra-large: 1000px;
 
 @mixin breakpoint($bp) {
-    @media screen and (min-width: $bp) {
-      @content;
-    }
+  @media screen and (min-width: $bp) {
+    @content;
+  }
 }
+
+// Susy
+
+$susy: (
+  columns: 12,
+  global-box-sizing: border-box,
+  container-position: center,
+  math: fluid,
+  gutters: .25,
+  // output: float,
+  // gutter-position: outside
+);
+
+
+
+// $total-columns: 10;
+// $column-width: 4em;
+// $gutter-width: 1em;
+// $grid-padding: 1em;

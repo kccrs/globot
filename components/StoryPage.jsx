@@ -32,34 +32,30 @@ export default class StoryPage extends Component {
         <section className="pageImage">
           <Image textKey={currentPage} />
         </section>
-        <section className="pageText">
+        <section className="currentPageText">
           <Text textKey={currentPage} />
-          <nav className="nav-container">
+        </section>
+          <footer>
 
-            <section className="first-choice">
               <Button
                 className={buttonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].choiceButton.result)}
                 text={storyText[currentPage].choiceButton.text}
               />
-            </section>
 
-            <section className="second-choice">
               <Button
                 className={secondButtonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].secondChoiceButton.result)}
                 text={storyText[currentPage].secondChoiceButton.text}
               />
-            </section>
 
             <Button
               className="start-over"
               handleClick={(e) => this.startOver(e)}
               text="Start Over"
             />
-          </nav>
+        </footer>
 
-        </section>
       </div>
     );
   };
