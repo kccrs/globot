@@ -32,7 +32,7 @@ export default class StoryPage extends Component {
         <section className="pageImage">
           <Image textKey={currentPage} />
         </section>
-        <section className="pageText">
+        <section className="currentPageText">
           <Text textKey={currentPage} />
         </section>
           <footer>
