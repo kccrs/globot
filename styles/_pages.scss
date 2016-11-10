@@ -176,7 +176,10 @@
 }
 
 // PAGE TEN
-
+.professor {
+  margin-left: 20%;
+  margin-top: 3%;
+}
 
 // PAGE TWELVE
 .small-image {
@@ -218,20 +221,11 @@
 
 }
 
-// #globot {
-//   animation:
-//   infinite-spinning linear 4s infinite,
-//   @keyframes infinite-spinning {
-//     100% { transform: rotate(360deg); }
-//   }
-//
-//   @keyframes shrinking {
-//     0%, 100% { width: 40%; }
-//     50% { width: 5%; }
-//   }
-// }
-
 // PAGE FOURTEEN
+.globot-wins {
+  margin-left: 30%;
+}
+
 .vending-machine {
   height: 30vh;
 }

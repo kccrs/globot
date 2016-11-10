@@ -213,7 +213,7 @@ const storyText = {
     pageText:
               'And the winner is... GloBot! You have won the grand prize... a lifetime supply of GloGurt!',
     imageUrl: '../content/images/globot.svg',
-    imageClassName: 'small-image globot',
+    imageClassName: 'small-image globot-wins',
     imageAlt: 'GloBot',
     imageUrl2: '../content/images/vending-machine.svg',
     imageClassName2: 'small-image vending-machine',
