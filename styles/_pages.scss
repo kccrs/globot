@@ -74,7 +74,7 @@
 
 // PAGE FIVE
 .page5 {
-  background: no-repeat url('/../content/images/background/disco-space2.png') center center fixed;
+  background: no-repeat url('/../content/images/background/disco-space2.jpg') center center fixed;
 }
 
 .surprised-bot {
@@ -152,6 +152,10 @@
 }
 
 // PAGE EIGHT
+.page8 {
+  background: no-repeat url('/../content/images/background/purple-space.jpg') center center fixed;
+}
+
 .glogurt-factory {
   width: 90%;
   @include breakpoint($small) {
@@ -172,3 +176,47 @@
 }
 
 // PAGE TEN
+
+
+// PAGE TWELVE
+.small-image {
+  margin: 5%;
+  margin-top: 10%;
+}
+
+.roller-bot {
+  margin-left: 20%;
+  animation:
+  rolling linear 4s infinite,
+}
+@keyframes rolling {
+  100% { transform: rotate(360deg); }
+}
+
+#globot {
+  animation:
+  infinite-spinning linear 4s infinite,
+  @keyframes infinite-spinning {
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes shrinking {
+    0%, 100% { width: 40%; }
+    50% { width: 5%; }
+  }
+}
+
+// PAGE FOURTEEN
+.vending-machine {
+  height: 30vh;
+}
+
+// PAGE FIFTEEN
+.globot-glows,
+.janky-robot {
+  height: 40vh;
+}
+
+.globot-glows {
+  margin-left: 25%;
+}

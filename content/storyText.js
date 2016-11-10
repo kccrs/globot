@@ -92,8 +92,6 @@ const storyText = {
                   },
     secondChoiceButton: {
                     visible: 'hidden',
-                    text: '',
-                    result: ''
                   }
   },
 
@@ -110,8 +108,6 @@ const storyText = {
                   },
     secondChoiceButton: {
                     visible: 'hidden',
-                    text: '',
-                    result: ''
                   }
   },
   page8: {
@@ -139,15 +135,115 @@ const storyText = {
     imageAlt: 'GloBot and Janky are arrested by the police for trying to break in to the GloGurt factory.',
     choiceButton: {
                     visible: 'hidden',
-                    text: '',
-                    result: ''
                   },
     secondChoiceButton: {
                     visible: 'hidden',
-                    text: '',
-                    result: ''
                   }
   },
+  page10: {
+    pageText:
+              '"Oh, hello! Who are you?" asked Janky.  "I am Professor Dinklebottom and I used to run this factory.  I am the inventor of GloGurt." "Oh we are so happy you are here, we are looking for GloGurt!" exclaimed GloBot. "Well, unfortunately for you I was fired." "Fired? But you invented GloGurt, why would they fire you?" asked GloBot. "They didn\'t like my latest flavor -- mustard and licorice." said Professor Dinklebottom.  Janky replied, "I can see why! That sounds terrible!"'  ,
+    imageUrl: '../content/images/dinklebottom.svg',
+    imageClassName: 'main-image professor',
+    imageAlt: 'GloBot and Janky meet Professor Dinklebottom outside the GloGurt factory.',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Next page',
+                    result: 'page11'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  }
+  },
+  page11: {
+    pageText:
+              '"Everyone is allowed to have their own opinions, I happen to like mustard and licorice." "I\'m sorry Professor," GloBot said, "we did not mean to offend you. Do you happen to know where else we can find GloGurt?" "Well," the Professor replied, "there is a GloGurt vending machine at the Space Disco, but there is a dance contest going on now. Do you want to enter the dance contest?"',
+    imageUrl: '../content/images/dinklebottom.svg',
+    imageClassName: 'main-image professor',
+    imageAlt: 'GloBot and Janky meet Professor Dinklebottom outside the GloGurt factory.',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'For sure!',
+                    result: 'page12'
+                  },
+    secondChoiceButton: {
+                    visible: 'visible',
+                    text: 'I don\'t dance.',
+                    result: 'page13'
+                  }
+  },
+  page12: {
+    pageText:
+              'Dance! Dance! Dance!',
+    imageUrl: '../content/images/roller-bot.svg',
+    imageClassName: 'small-image roller-bot',
+    imageAlt: 'Roller Bot',
+    imageUrl2: '../content/images/purple-robot.svg',
+    imageClassName2: 'small-image purple-robot',
+    imageAlt2: 'Purple Robot',
+    imageUrl3: '../content/images/globot.svg',
+    imageClassName3: 'small-image globot',
+    imageAlt3: 'GloBot',
+    imageUrl4: '../content/images/janky-robot.svg',
+    imageClassName4: 'small-image janky',
+    imageAlt4: 'Janky',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'See the winner',
+                    result: 'page14'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  }
+  },
+  page13: {
+    pageText:
+              'Well that is boring.  I guess just go home as dancing is the only way to get GloGurt. THE END',
+    imageUrl: '../content/images/dinklebottom.svg',
+    imageClassName: 'main-image professor',
+    imageAlt: 'GloBot and Janky meet Professor Dinklebottom outside the GloGurt factory.',
+    choiceButton: {
+                    visible: 'hidden',
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  }
+  },
+  page14: {
+    pageText:
+              'And the winner is... GloBot! You have won the grand prize... a lifetime supply of GloGurt!',
+    imageUrl: '../content/images/globot.svg',
+    imageClassName: 'small-image globot',
+    imageAlt: 'GloBot',
+    imageUrl2: '../content/images/vending-machine.svg',
+    imageClassName2: 'small-image vending-machine',
+    imageAlt2: 'Vending Machine',
+    choiceButton: {
+                    visible: 'visible',
+                    text: 'Continue',
+                    result: 'page15'
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  }
+  },
+  page15: {
+    pageText:
+              '"Oh Janky, we did it!" exclaimed GloBot, "I couldn\'t have done it without you!" "That\'s what friends do, support each other. Now let\'s go home!" Janky replied. THE END.',
+    imageUrl: '../content/images/globot-glows.svg',
+    imageClassName: 'small-image globot-glows',
+    imageAlt: 'GloBot',
+    imageUrl2: '../content/images/janky-robot.svg',
+    imageClassName2: 'small-image janky-robot',
+    imageAlt2: 'Vending Machine',
+    choiceButton: {
+                    visible: 'hidden',
+                  },
+    secondChoiceButton: {
+                    visible: 'hidden',
+                  }
+  },
+
 
 
 };

@@ -4,6 +4,9 @@ import classnames from 'classnames';
 import Button from './Button';
 import Text from './Text';
 import Image from './Image';
+import Image2 from './Image2';
+import Image3 from './Image3';
+
 import storyText from '../content/storyText';
 
 export default class StoryPage extends Component {
@@ -31,6 +34,8 @@ export default class StoryPage extends Component {
       <div className={pageClass}>
         <section className="pageImage">
           <Image textKey={currentPage} />
+          <Image2 textKey={currentPage} />
+          <Image3 textKey={currentPage} />
         </section>
         <section className="currentPageText">
           <Text textKey={currentPage} />
