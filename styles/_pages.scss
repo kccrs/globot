@@ -186,25 +186,50 @@
 
 .roller-bot {
   margin-left: 20%;
-  animation:
-  rolling linear 4s infinite,
+  animation: rolling linear 1s infinite,
 }
+
 @keyframes rolling {
-  100% { transform: rotate(360deg); }
+  0% { transform: translateX(-40px); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(-40px); }
 }
 
-#globot {
-  animation:
-  infinite-spinning linear 4s infinite,
-  @keyframes infinite-spinning {
-    100% { transform: rotate(360deg); }
-  }
-
-  @keyframes shrinking {
-    0%, 100% { width: 40%; }
-    50% { width: 5%; }
-  }
+.purple-robot {
+  animation: jumping linear 1s infinite;
 }
+
+@keyframes jumping {
+  0% { transform: translateY(-40px); }
+  50% { transform: translateY(40px); }
+  100% { transform: translateY(-40px); }
+}
+
+.globot {
+  animation: winning linear 4s infinite;
+}
+
+@keyframes winning {
+  0% { transform: rotateZ(90deg); }
+  25% { transform: rotateZ(-90deg); }
+  50% { transform: rotateZ(360deg); }
+  75% { transform: rotateZ(-360deg); }
+  100% { transform: rotateZ(-360deg); }
+
+}
+
+// #globot {
+//   animation:
+//   infinite-spinning linear 4s infinite,
+//   @keyframes infinite-spinning {
+//     100% { transform: rotate(360deg); }
+//   }
+//
+//   @keyframes shrinking {
+//     0%, 100% { width: 40%; }
+//     50% { width: 5%; }
+//   }
+// }
 
 // PAGE FOURTEEN
 .vending-machine {
