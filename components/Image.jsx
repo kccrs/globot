@@ -7,11 +7,9 @@ export default class Image extends Component {
     let pageId = this.props.textKey;
 
     return (
-      <section className="imageArea">
-        <img
-          src={storyText[pageId].imageUrl} className={storyText[pageId].imageClassName} alt={storyText[pageId].imageAlt}
-        />
-      </section>
+      <img
+        src={storyText[pageId].imageUrl} className={storyText[pageId].imageClassName} alt={storyText[pageId].imageAlt}
+      />
     );
   }
 }

@@ -79,42 +79,27 @@
 
 .surprised-bot {
   @include push(4 of 12);
-  animation: infinite-spinning linear 4s infinite,
-  shrinking linear 10s infinite alternate;
+  animation:
+    infinite-spinning linear 4s infinite,
+    shrinking linear 10s infinite alternate;
   @include breakpoint($large) {
     margin-top: 12%;
   }
 }
 
 @keyframes infinite-spinning {
-  100% {
-    transform: rotate(360deg);
-  }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes shrinking {
-  0% {
-    width: 40%;
-  }
-  50% {
-    width: 5%;
-  }
-  100% {
-    width: 40%;
-  }
+  0%, 100% { width: 40%; }
+  50% { width: 5%; }
 }
 
 @include breakpoint($large) {
   @keyframes shrinking {
-    0% {
-      width: 30%;
-    }
-    50% {
-      width: 5%;
-    }
-    100% {
-      width: 30%;
-    }
+    0%, 100% { width: 30%; }
+    50% { width: 5%; }
   }
 }
 
