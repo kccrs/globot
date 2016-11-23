@@ -3,10 +3,10 @@
   @include push(1 of 12);
   height: 40vh;
   margin-top: 15%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(3 of 12);
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(3 of 12);
     height: 45vh;
   }
@@ -33,16 +33,16 @@
 
 // PAGE THREE
 .page3 {
-  background: no-repeat url('/../content/images/background/blue-space.jpg') center center fixed;
+  @include background-image('/../content/images/background/blue-space.jpg');
 }
 
 .friends {
-  margin-top: 5%;
   height: 35vh;
-  @include breakpoint($small) {
+  margin-top: 5%;
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(3 of 12);
   }
   @include breakpoint($medium) {
@@ -61,7 +61,7 @@
 // PAGE FOUR
 .power-down {
   @include push(3 of 12);
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(4 of 12);
   }
   @include breakpoint(550px) {
@@ -74,7 +74,7 @@
 
 // PAGE FIVE
 .page5 {
-  background: no-repeat url('/../content/images/background/disco-space2.jpg') center center fixed;
+  @include background-image('/../content/images/background/disco-space2.jpg');
 }
 
 .surprised-bot {
@@ -105,16 +105,16 @@
 
 // PAGE SIX
 .page6 {
-  background: no-repeat url('/../content/images/background/saturn2.jpg') center center fixed;
+  @include background-image('/../content/images/background/saturn2.jpg');
 }
 
 .mystery-box {
   @include push(1 of 12);
   height: 24vh;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     height: 30vh;
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(2 of 12);
     margin-top: 7%;
   }
@@ -153,12 +153,12 @@
 
 // PAGE EIGHT
 .page8 {
-  background: no-repeat url('/../content/images/background/purple-space.jpg') center center fixed;
+  @include background-image('/../content/images/background/purple-space.jpg');
 }
 
 .glogurt-factory {
   width: 90%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
   @include breakpoint($medium) {
@@ -170,7 +170,7 @@
 // PAGE NINE
 .uh-oh {
   width: 87%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
 }
@@ -218,7 +218,6 @@
   50% { transform: rotateZ(360deg); }
   75% { transform: rotateZ(-360deg); }
   100% { transform: rotateZ(-360deg); }
-
 }
 
 // PAGE FOURTEEN

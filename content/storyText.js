@@ -184,9 +184,6 @@ const storyText = {
     imageUrl3: '../content/images/globot.svg',
     imageClassName3: 'small-image globot',
     imageAlt3: 'GloBot',
-    imageUrl4: '../content/images/janky-robot.svg',
-    imageClassName4: 'small-image janky',
-    imageAlt4: 'Janky',
     choiceButton: {
                     visible: 'visible',
                     text: 'See the winner',
@@ -242,10 +239,7 @@ const storyText = {
     secondChoiceButton: {
                     visible: 'hidden',
                   }
-  },
-
-
-
+  }
 };
 
 module.exports = storyText;

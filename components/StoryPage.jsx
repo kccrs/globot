@@ -41,26 +41,22 @@ export default class StoryPage extends Component {
           <Text textKey={currentPage} />
         </section>
           <footer>
-
               <Button
                 className={buttonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].choiceButton.result)}
                 text={storyText[currentPage].choiceButton.text}
               />
-
               <Button
                 className={secondButtonClass}
                 handleClick={(e) => this.goToStoryPage(e, storyText[currentPage].secondChoiceButton.result)}
                 text={storyText[currentPage].secondChoiceButton.text}
               />
-
             <Button
               className="start-over"
               handleClick={(e) => this.startOver(e)}
               text="Start Over"
             />
         </footer>
-
       </div>
     );
   };

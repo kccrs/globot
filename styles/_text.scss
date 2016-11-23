@@ -1,20 +1,18 @@
 .story {
   @include squish(1%);
   background-color: transparentize(white, .30);
+  bottom: 100px;
   color: $color-space;
   position: absolute;
-  bottom: 100px;
   width: 98%;
 }
 
-p {
-  @include squish(5%);
+.story-body {
   @include font-size(20px);
-  color: $color-space;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-family: $font-secondary;
+  padding: 10px;
   text-align: center;
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include font-size(24px);
   }
 }
@@ -22,9 +20,9 @@ p {
 .read-aloud {
   display: flex;
   justify-content: space-around;
+  margin: 0 auto;
   padding-bottom: 10px;
   width: 60%;
-  margin: 0 auto;
 }
 
 .read-text {
