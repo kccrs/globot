@@ -8195,13 +8195,13 @@
 
 	var _StoryPage2 = _interopRequireDefault(_StoryPage);
 
-	var _NotFound = __webpack_require__(512);
+	var _NotFound = __webpack_require__(514);
 
 	var _NotFound2 = _interopRequireDefault(_NotFound);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(513);
+	__webpack_require__(515);
 
 
 	var Root = function Root() {
@@ -33105,6 +33105,14 @@
 
 	var _Image2 = _interopRequireDefault(_Image);
 
+	var _Image3 = __webpack_require__(512);
+
+	var _Image4 = _interopRequireDefault(_Image3);
+
+	var _Image5 = __webpack_require__(513);
+
+	var _Image6 = _interopRequireDefault(_Image5);
+
 	var _storyText = __webpack_require__(510);
 
 	var _storyText2 = _interopRequireDefault(_storyText);
@@ -33157,7 +33165,9 @@
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'pageImage' },
-	          _react2.default.createElement(_Image2.default, { textKey: currentPage })
+	          _react2.default.createElement(_Image2.default, { textKey: currentPage }),
+	          _react2.default.createElement(_Image4.default, { textKey: currentPage }),
+	          _react2.default.createElement(_Image6.default, { textKey: currentPage })
 	        ),
 	        _react2.default.createElement(
 	          'section',
@@ -33302,8 +33312,8 @@
 	    key: 'textToSpeech',
 	    value: function textToSpeech(e) {
 	      e.preventDefault();
-	      var pageId = this.props.textKey;
 
+	      var pageId = this.props.textKey;
 	      var msg = new SpeechSynthesisUtterance(_storyText2.default[pageId].pageText);
 
 	      msg.rate = 0.9;
@@ -33321,7 +33331,7 @@
 	        { className: 'story' },
 	        _react2.default.createElement(
 	          'p',
-	          null,
+	          { className: 'story-body' },
 	          _storyText2.default[pageId].pageText
 	        ),
 	        _react2.default.createElement(
@@ -33437,9 +33447,7 @@
 	      result: 'page7'
 	    },
 	    secondChoiceButton: {
-	      visible: 'hidden',
-	      text: '',
-	      result: ''
+	      visible: 'hidden'
 	    }
 	  },
 
@@ -33454,9 +33462,7 @@
 	      result: 'page8'
 	    },
 	    secondChoiceButton: {
-	      visible: 'hidden',
-	      text: '',
-	      result: ''
+	      visible: 'hidden'
 	    }
 	  },
 	  page8: {
@@ -33481,14 +33487,10 @@
 	    imageClassName: 'main-image uh-oh',
 	    imageAlt: 'GloBot and Janky are arrested by the police for trying to break in to the GloGurt factory.',
 	    choiceButton: {
-	      visible: 'hidden',
-	      text: '',
-	      result: ''
+	      visible: 'hidden'
 	    },
 	    secondChoiceButton: {
-	      visible: 'hidden',
-	      text: '',
-	      result: ''
+	      visible: 'hidden'
 	    }
 	  },
 	  page10: {
@@ -33502,9 +33504,7 @@
 	      result: 'page11'
 	    },
 	    secondChoiceButton: {
-	      visible: 'hidden',
-	      text: '',
-	      result: ''
+	      visible: 'hidden'
 	    }
 	  },
 	  page11: {
@@ -33519,11 +33519,74 @@
 	    },
 	    secondChoiceButton: {
 	      visible: 'visible',
-	      text: 'Sounds boring.',
+	      text: 'I don\'t dance.',
 	      result: 'page13'
 	    }
+	  },
+	  page12: {
+	    pageText: 'Dance! Dance! Dance!',
+	    imageUrl: '../content/images/roller-bot.svg',
+	    imageClassName: 'small-image roller-bot',
+	    imageAlt: 'Roller Bot',
+	    imageUrl2: '../content/images/purple-robot.svg',
+	    imageClassName2: 'small-image purple-robot',
+	    imageAlt2: 'Purple Robot',
+	    imageUrl3: '../content/images/globot.svg',
+	    imageClassName3: 'small-image globot',
+	    imageAlt3: 'GloBot',
+	    choiceButton: {
+	      visible: 'visible',
+	      text: 'See the winner',
+	      result: 'page14'
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden'
+	    }
+	  },
+	  page13: {
+	    pageText: 'Well that is boring.  I guess just go home as dancing is the only way to get GloGurt. THE END',
+	    imageUrl: '../content/images/dinklebottom.svg',
+	    imageClassName: 'main-image professor',
+	    imageAlt: 'GloBot and Janky meet Professor Dinklebottom outside the GloGurt factory.',
+	    choiceButton: {
+	      visible: 'hidden'
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden'
+	    }
+	  },
+	  page14: {
+	    pageText: 'And the winner is... GloBot! You have won the grand prize... a lifetime supply of GloGurt!',
+	    imageUrl: '../content/images/globot.svg',
+	    imageClassName: 'small-image globot-wins',
+	    imageAlt: 'GloBot',
+	    imageUrl2: '../content/images/vending-machine.svg',
+	    imageClassName2: 'small-image vending-machine',
+	    imageAlt2: 'Vending Machine',
+	    choiceButton: {
+	      visible: 'visible',
+	      text: 'Continue',
+	      result: 'page15'
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden'
+	    }
+	  },
+	  page15: {
+	    pageText: '"Oh Janky, we did it!" exclaimed GloBot, "I couldn\'t have done it without you!" "That\'s what friends do, support each other. Now let\'s go home!" Janky replied. THE END.',
+	    imageUrl: '../content/images/globot-glows.svg',
+	    imageClassName: 'small-image globot-glows',
+	    imageAlt: 'GloBot',
+	    imageUrl2: '../content/images/janky-robot.svg',
+	    imageClassName2: 'small-image janky-robot',
+	    imageAlt2: 'Vending Machine',
+	    choiceButton: {
+	      visible: 'hidden'
+	    },
+	    secondChoiceButton: {
+	      visible: 'hidden'
+	    }
 	  }
-
 	};
 
 	module.exports = storyText;
@@ -33585,6 +33648,112 @@
 /* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _storyText = __webpack_require__(510);
+
+	var _storyText2 = _interopRequireDefault(_storyText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Image2 = function (_Component) {
+	  _inherits(Image2, _Component);
+
+	  function Image2() {
+	    _classCallCheck(this, Image2);
+
+	    return _possibleConstructorReturn(this, (Image2.__proto__ || Object.getPrototypeOf(Image2)).apply(this, arguments));
+	  }
+
+	  _createClass(Image2, [{
+	    key: 'render',
+	    value: function render() {
+	      var pageId = this.props.textKey;
+
+	      return _react2.default.createElement('img', {
+	        src: _storyText2.default[pageId].imageUrl2, className: _storyText2.default[pageId].imageClassName2, alt: _storyText2.default[pageId].imageAlt2
+	      });
+	    }
+	  }]);
+
+	  return Image2;
+	}(_react.Component);
+
+	exports.default = Image2;
+
+/***/ },
+/* 513 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _storyText = __webpack_require__(510);
+
+	var _storyText2 = _interopRequireDefault(_storyText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Image3 = function (_Component) {
+	  _inherits(Image3, _Component);
+
+	  function Image3() {
+	    _classCallCheck(this, Image3);
+
+	    return _possibleConstructorReturn(this, (Image3.__proto__ || Object.getPrototypeOf(Image3)).apply(this, arguments));
+	  }
+
+	  _createClass(Image3, [{
+	    key: 'render',
+	    value: function render() {
+	      var pageId = this.props.textKey;
+
+	      return _react2.default.createElement('img', {
+	        src: _storyText2.default[pageId].imageUrl3, className: _storyText2.default[pageId].imageClassName3, alt: _storyText2.default[pageId].imageAlt3
+	      });
+	    }
+	  }]);
+
+	  return Image3;
+	}(_react.Component);
+
+	exports.default = Image3;
+
+/***/ },
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -33622,7 +33791,7 @@
 	        { className: "NotFound" },
 	        _react2.default.createElement(
 	          "p",
-	          { className: "404" },
+	          { className: "error" },
 	          "Page Not Found"
 	        )
 	      );
@@ -33636,16 +33805,16 @@
 	;
 
 /***/ },
-/* 513 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(514);
+	var content = __webpack_require__(516);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(516)(content, {});
+	var update = __webpack_require__(518)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -33662,22 +33831,21 @@
 	}
 
 /***/ },
-/* 514 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(515)();
+	exports = module.exports = __webpack_require__(517)();
 	// imports
-	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Orbitron:400,500);", ""]);
-	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Play);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Orbitron|Play);", ""]);
 
 	// module
-	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  height: 100%;\n  min-width: 100%; }\n  html *, html *:before, html *:after {\n    -moz-box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  max-width: 100%;\n  margin-left: auto;\n  margin-right: auto;\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n  .Application:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.titles {\n  padding: 30vh 5vw 0; }\n\nh1 {\n  font-size: 60px;\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  font-size: 38px;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  padding: 10px 0;\n  text-align: center;\n  margin-bottom: 10%; }\n  @media screen and (min-width: 900px) {\n    h2 {\n      margin-bottom: 5%; } }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  font-size: 1.25rem;\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  height: 50px;\n  letter-spacing: .05em; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white; }\n  @media screen and (min-width: 400px) {\n    button {\n      font-size: 1.25rem;\n      height: 55px; } }\n  @media screen and (min-width: 710px) {\n    button {\n      font-size: 1.625rem; } }\n\n.start-button {\n  font-size: 2rem;\n  min-width: 200px; }\n\n.StoryPage {\n  clear: both;\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh;\n  min-height: 100%;\n  position: relative; }\n\n.hidden {\n  visibility: hidden; }\n\n.pageImage {\n  min-height: 50%; }\n\nfooter {\n  clear: both;\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  position: absolute;\n  bottom: 0;\n  height: 80px;\n  padding: 0 10px 10px; }\n\n.first-choice-button,\n.second-choice-button,\n.start-over {\n  width: 28.57143%;\n  float: left; }\n  .first-choice-button:nth-child(3n + 1),\n  .second-choice-button:nth-child(3n + 1),\n  .start-over:nth-child(3n + 1) {\n    margin-left: 0;\n    margin-right: -100%;\n    clear: both;\n    margin-left: 0; }\n  .first-choice-button:nth-child(3n + 2),\n  .second-choice-button:nth-child(3n + 2),\n  .start-over:nth-child(3n + 2) {\n    margin-left: 35.71429%;\n    margin-right: -100%;\n    clear: none; }\n  .first-choice-button:nth-child(3n + 3),\n  .second-choice-button:nth-child(3n + 3),\n  .start-over:nth-child(3n + 3) {\n    margin-left: 71.42857%;\n    margin-right: -100%;\n    clear: none; }\n\n.start-over {\n  background-color: #c4a1d6;\n  color: #2e0045; }\n  .start-over:hover {\n    background-color: rgba(196, 161, 214, 0.6); }\n\n.story {\n  margin-left: 1%;\n  margin-right: 1%;\n  background-color: rgba(255, 255, 255, 0.7);\n  color: #271530;\n  position: absolute;\n  bottom: 100px;\n  width: 98%; }\n\np {\n  margin-left: 5%;\n  margin-right: 5%;\n  font-size: 1.25rem;\n  color: #271530;\n  padding-top: 10px;\n  padding-bottom: 10px;\n  text-align: center; }\n  @media screen and (min-width: 500px) {\n    p {\n      font-size: 1.5rem; } }\n\n.read-aloud {\n  display: flex;\n  justify-content: space-around;\n  padding-bottom: 10px;\n  width: 60%;\n  margin: 0 auto; }\n\n.read-text {\n  font-size: 1.5rem;\n  background-color: #c4a1d6;\n  width: 150px; }\n\n.main-image {\n  margin-left: 8.47458%;\n  height: 40vh;\n  margin-top: 15%; }\n  @media screen and (min-width: 400px) {\n    .main-image {\n      margin-left: 25.42373%; } }\n  @media screen and (min-width: 500px) {\n    .main-image {\n      margin-left: 25.42373%;\n      height: 45vh; } }\n  @media screen and (min-width: 710px) {\n    .main-image {\n      margin-left: 33.89831%;\n      height: 50vh;\n      margin-top: 10%; } }\n  @media screen and (min-width: 900px) {\n    .main-image {\n      margin-top: 5%; } }\n\n.oh-no {\n  height: 32vh; }\n  @media screen and (min-width: 600px) {\n    .oh-no {\n      height: 40vh; } }\n  @media screen and (min-width: 900px) {\n    .oh-no {\n      height: 50vh; } }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  margin-top: 5%;\n  height: 35vh; }\n  @media screen and (min-width: 400px) {\n    .friends {\n      margin-left: 8.47458%; } }\n  @media screen and (min-width: 500px) {\n    .friends {\n      margin-left: 25.42373%; } }\n  @media screen and (min-width: 710px) {\n    .friends {\n      margin-top: 15%; } }\n  @media screen and (min-width: 900px) {\n    .friends {\n      margin-left: 16.94915%;\n      height: 50vh;\n      margin-top: 5%; } }\n  @media screen and (min-width: 1000px) {\n    .friends {\n      margin-left: 25.42373%; } }\n\n.power-down {\n  margin-left: 25.42373%; }\n  @media screen and (min-width: 400px) {\n    .power-down {\n      margin-left: 33.89831%; } }\n  @media screen and (min-width: 550px) {\n    .power-down {\n      margin-top: 5%; } }\n  @media screen and (min-width: 900px) {\n    .power-down {\n      margin-left: 42.37288%; } }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.jpg\") center center fixed; }\n\n.surprised-bot {\n  margin-left: 33.89831%;\n  animation: infinite-spinning linear 4s infinite, shrinking linear 10s infinite alternate; }\n  @media screen and (min-width: 900px) {\n    .surprised-bot {\n      margin-top: 12%; } }\n\n@keyframes infinite-spinning {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes shrinking {\n  0%, 100% {\n    width: 40%; }\n  50% {\n    width: 5%; } }\n\n@media screen and (min-width: 900px) {\n  @keyframes shrinking {\n    0%, 100% {\n      width: 30%; }\n    50% {\n      width: 5%; } } }\n\n.page6 {\n  background: no-repeat url(\"/../content/images/background/saturn2.jpg\") center center fixed; }\n\n.mystery-box {\n  margin-left: 8.47458%;\n  height: 24vh; }\n  @media screen and (min-width: 400px) {\n    .mystery-box {\n      height: 30vh; } }\n  @media screen and (min-width: 500px) {\n    .mystery-box {\n      margin-left: 16.94915%;\n      margin-top: 7%; } }\n  @media screen and (min-width: 710px) {\n    .mystery-box {\n      height: 40vh; } }\n  @media screen and (min-width: 1000px) {\n    .mystery-box {\n      margin-left: 25.42373%; } }\n\n.page7 .story {\n  height: 30vh;\n  overflow: scroll; }\n  @media screen and (min-width: 710px) {\n    .page7 .story {\n      height: 42vh; } }\n  @media screen and (min-width: 830px) {\n    .page7 .story {\n      height: 35vh; } }\n  @media screen and (min-width: 900px) {\n    .page7 .story {\n      height: 30vh; } }\n\n.box-o-cheese {\n  margin-left: 0%;\n  height: 35vh;\n  margin-left: 3%;\n  width: 90%; }\n  @media screen and (min-width: 710px) {\n    .box-o-cheese {\n      margin-top: 5%; } }\n\n.page8 {\n  background: no-repeat url(\"/../content/images/background/purple-space.jpg\") center center fixed; }\n\n.glogurt-factory {\n  width: 90%; }\n  @media screen and (min-width: 400px) {\n    .glogurt-factory {\n      margin-left: 8.47458%; } }\n  @media screen and (min-width: 710px) {\n    .glogurt-factory {\n      margin-left: 0%;\n      width: 100%; } }\n\n.uh-oh {\n  width: 87%; }\n  @media screen and (min-width: 400px) {\n    .uh-oh {\n      margin-left: 8.47458%; } }\n", ""]);
+	exports.push([module.id, "/* http://meyerweb.com/eric/tools/css/reset/\n   v2.0 | 20110126\n   License: none (public domain)\n*/\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n  display: block; }\n\nbody {\n  line-height: 1; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\nblockquote:before, blockquote:after,\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ninput[type=range] {\n  -webkit-appearance: none;\n  /* Hides the slider so that custom slider can be made */\n  width: 100%;\n  /* Specific width is required for Firefox. */\n  background: transparent;\n  /* Otherwise white in Chrome */ }\n\ninput[type=range]::-webkit-slider-thumb {\n  -webkit-appearance: none; }\n\ninput[type=range]:focus {\n  outline: none;\n  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n\ninput[type=range]::-ms-track {\n  width: 100%;\n  cursor: pointer;\n  /* Hides the slider so custom styles can be added */\n  background: transparent;\n  border-color: transparent;\n  color: transparent; }\n\nhtml {\n  height: 100%;\n  min-width: 100%; }\n  html *, html *:before, html *:after {\n    -moz-box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n.Application {\n  max-width: 100%;\n  margin-left: auto;\n  margin-right: auto;\n  background-size: cover;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  height: 100vh; }\n  .Application:after {\n    content: \" \";\n    display: block;\n    clear: both; }\n\n.titles {\n  padding: 30vh 5vw 0; }\n\nh1 {\n  font-size: 3.75rem;\n  color: #985ab7;\n  font-family: \"Play\", sans-serif;\n  padding: 20px 0;\n  text-align: center; }\n\nh2 {\n  font-size: 2.5rem;\n  font-family: \"Orbitron\", sans-serif;\n  letter-spacing: .1em;\n  margin-bottom: 10%;\n  padding: 10px 0;\n  text-align: center; }\n  @media screen and (min-width: 900px) {\n    h2 {\n      margin-bottom: 5%; } }\n\n.buttonContainer {\n  display: flex;\n  flex-direction: row;\n  height: 80px;\n  justify-content: center; }\n\nbutton {\n  font-size: 1.25rem;\n  background-color: #985ab7;\n  border-radius: 40px;\n  border: none;\n  color: #271530;\n  font-family: \"Play\", sans-serif;\n  height: 50px;\n  letter-spacing: .05em; }\n  button:hover {\n    background-color: rgba(196, 161, 214, 0.7);\n    color: white; }\n  @media screen and (min-width: 400px) {\n    button {\n      font-size: 1.25rem;\n      height: 55px; } }\n  @media screen and (min-width: 710px) {\n    button {\n      font-size: 1.625rem; } }\n\n.start-button {\n  font-size: 2rem;\n  min-width: 200px; }\n\n.StoryPage {\n  clear: both;\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  background: no-repeat url(\"/../content/images/background/saturn.jpg\") center center fixed;\n  background-size: cover;\n  height: 100vh;\n  min-height: 100%;\n  position: relative; }\n\n.hidden {\n  visibility: hidden; }\n\n.pageImage {\n  min-height: 50%; }\n\nfooter {\n  clear: both;\n  width: 100%;\n  float: left;\n  margin-left: 0;\n  margin-right: 0;\n  bottom: 0;\n  height: 80px;\n  padding: 0 10px 10px;\n  position: absolute; }\n\n.first-choice-button,\n.second-choice-button,\n.start-over {\n  width: 28.57143%;\n  float: left; }\n  .first-choice-button:nth-child(3n + 1),\n  .second-choice-button:nth-child(3n + 1),\n  .start-over:nth-child(3n + 1) {\n    margin-left: 0;\n    margin-right: -100%;\n    clear: both;\n    margin-left: 0; }\n  .first-choice-button:nth-child(3n + 2),\n  .second-choice-button:nth-child(3n + 2),\n  .start-over:nth-child(3n + 2) {\n    margin-left: 35.71429%;\n    margin-right: -100%;\n    clear: none; }\n  .first-choice-button:nth-child(3n + 3),\n  .second-choice-button:nth-child(3n + 3),\n  .start-over:nth-child(3n + 3) {\n    margin-left: 71.42857%;\n    margin-right: -100%;\n    clear: none; }\n\n.start-over {\n  background-color: #c4a1d6;\n  color: #2e0045; }\n  .start-over:hover {\n    background-color: rgba(196, 161, 214, 0.6); }\n\n.story {\n  margin-left: 1%;\n  margin-right: 1%;\n  background-color: rgba(255, 255, 255, 0.7);\n  bottom: 100px;\n  color: #271530;\n  position: absolute;\n  width: 98%; }\n\n.story-body {\n  font-size: 1.25rem;\n  font-family: \"Play\", sans-serif;\n  padding: 10px;\n  text-align: center; }\n  @media screen and (min-width: 500px) {\n    .story-body {\n      font-size: 1.5rem; } }\n\n.read-aloud {\n  display: flex;\n  justify-content: space-around;\n  margin: 0 auto;\n  padding-bottom: 10px;\n  width: 60%; }\n\n.read-text {\n  font-size: 1.5rem;\n  background-color: #c4a1d6;\n  width: 150px; }\n\n.main-image {\n  margin-left: 8.47458%;\n  height: 40vh;\n  margin-top: 15%; }\n  @media screen and (min-width: 400px) {\n    .main-image {\n      margin-left: 25.42373%; } }\n  @media screen and (min-width: 500px) {\n    .main-image {\n      margin-left: 25.42373%;\n      height: 45vh; } }\n  @media screen and (min-width: 710px) {\n    .main-image {\n      margin-left: 33.89831%;\n      height: 50vh;\n      margin-top: 10%; } }\n  @media screen and (min-width: 900px) {\n    .main-image {\n      margin-top: 5%; } }\n\n.oh-no {\n  height: 32vh; }\n  @media screen and (min-width: 600px) {\n    .oh-no {\n      height: 40vh; } }\n  @media screen and (min-width: 900px) {\n    .oh-no {\n      height: 50vh; } }\n\n.page3 {\n  background: no-repeat url(\"/../content/images/background/blue-space.jpg\") center center fixed; }\n\n.friends {\n  height: 35vh;\n  margin-top: 5%; }\n  @media screen and (min-width: 400px) {\n    .friends {\n      margin-left: 8.47458%; } }\n  @media screen and (min-width: 500px) {\n    .friends {\n      margin-left: 25.42373%; } }\n  @media screen and (min-width: 710px) {\n    .friends {\n      margin-top: 15%; } }\n  @media screen and (min-width: 900px) {\n    .friends {\n      margin-left: 16.94915%;\n      height: 50vh;\n      margin-top: 5%; } }\n  @media screen and (min-width: 1000px) {\n    .friends {\n      margin-left: 25.42373%; } }\n\n.power-down {\n  margin-left: 25.42373%; }\n  @media screen and (min-width: 400px) {\n    .power-down {\n      margin-left: 33.89831%; } }\n  @media screen and (min-width: 550px) {\n    .power-down {\n      margin-top: 5%; } }\n  @media screen and (min-width: 900px) {\n    .power-down {\n      margin-left: 42.37288%; } }\n\n.page5 {\n  background: no-repeat url(\"/../content/images/background/disco-space2.jpg\") center center fixed; }\n\n.surprised-bot {\n  margin-left: 33.89831%;\n  animation: infinite-spinning linear 4s infinite, shrinking linear 10s infinite alternate; }\n  @media screen and (min-width: 900px) {\n    .surprised-bot {\n      margin-top: 12%; } }\n\n@keyframes infinite-spinning {\n  100% {\n    transform: rotate(360deg); } }\n\n@keyframes shrinking {\n  0%, 100% {\n    width: 40%; }\n  50% {\n    width: 5%; } }\n\n@media screen and (min-width: 900px) {\n  @keyframes shrinking {\n    0%, 100% {\n      width: 30%; }\n    50% {\n      width: 5%; } } }\n\n.page6 {\n  background: no-repeat url(\"/../content/images/background/saturn2.jpg\") center center fixed; }\n\n.mystery-box {\n  margin-left: 8.47458%;\n  height: 24vh; }\n  @media screen and (min-width: 400px) {\n    .mystery-box {\n      height: 30vh; } }\n  @media screen and (min-width: 500px) {\n    .mystery-box {\n      margin-left: 16.94915%;\n      margin-top: 7%; } }\n  @media screen and (min-width: 710px) {\n    .mystery-box {\n      height: 40vh; } }\n  @media screen and (min-width: 1000px) {\n    .mystery-box {\n      margin-left: 25.42373%; } }\n\n.page7 .story {\n  height: 30vh;\n  overflow: scroll; }\n  @media screen and (min-width: 710px) {\n    .page7 .story {\n      height: 42vh; } }\n  @media screen and (min-width: 830px) {\n    .page7 .story {\n      height: 35vh; } }\n  @media screen and (min-width: 900px) {\n    .page7 .story {\n      height: 30vh; } }\n\n.box-o-cheese {\n  margin-left: 0%;\n  height: 35vh;\n  margin-left: 3%;\n  width: 90%; }\n  @media screen and (min-width: 710px) {\n    .box-o-cheese {\n      margin-top: 5%; } }\n\n.page8 {\n  background: no-repeat url(\"/../content/images/background/purple-space.jpg\") center center fixed; }\n\n.glogurt-factory {\n  width: 90%; }\n  @media screen and (min-width: 400px) {\n    .glogurt-factory {\n      margin-left: 8.47458%; } }\n  @media screen and (min-width: 710px) {\n    .glogurt-factory {\n      margin-left: 0%;\n      width: 100%; } }\n\n.uh-oh {\n  width: 87%; }\n  @media screen and (min-width: 400px) {\n    .uh-oh {\n      margin-left: 8.47458%; } }\n\n.professor {\n  margin-left: 20%;\n  margin-top: 3%; }\n\n.small-image {\n  margin: 5%;\n  margin-top: 10%; }\n\n.roller-bot {\n  margin-left: 20%;\n  animation: rolling linear 1s infinite; }\n\n@keyframes rolling {\n  0% {\n    transform: translateX(-40px); }\n  50% {\n    transform: translateX(40px); }\n  100% {\n    transform: translateX(-40px); } }\n\n.purple-robot {\n  animation: jumping linear 1s infinite; }\n\n@keyframes jumping {\n  0% {\n    transform: translateY(-40px); }\n  50% {\n    transform: translateY(40px); }\n  100% {\n    transform: translateY(-40px); } }\n\n.globot {\n  animation: winning linear 4s infinite; }\n\n@keyframes winning {\n  0% {\n    transform: rotateZ(90deg); }\n  25% {\n    transform: rotateZ(-90deg); }\n  50% {\n    transform: rotateZ(360deg); }\n  75% {\n    transform: rotateZ(-360deg); }\n  100% {\n    transform: rotateZ(-360deg); } }\n\n.globot-wins {\n  margin-left: 30%; }\n\n.vending-machine {\n  height: 30vh; }\n\n.globot-glows,\n.janky-robot {\n  height: 40vh; }\n\n.globot-glows {\n  margin-left: 25%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 515 */
+/* 517 */
 /***/ function(module, exports) {
 
 	/*
@@ -33733,7 +33901,7 @@
 
 
 /***/ },
-/* 516 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
