@@ -10,6 +10,8 @@ describe('Application', () => {
 
   context('shallow tests', () => {
     const wrapper = shallow(<Application />);
+    const onClickStub = sinon.spy();
+    const startButton = shallow(<Button onClick={onClickStub}/>);
 
     it('renders as a <div>', () => {
       assert.equal(wrapper.type(), 'div');
@@ -19,16 +21,8 @@ describe('Application', () => {
       assert.lengthOf(wrapper.find('Button'), 1);
     });
 
-  });
-
-  context('mount tests', () => {
-    const wrapper = mount(<Application />);
-    const startButton = wrapper.find('button');
-    const onStartStub = sinon.spy();
-
-    // it('should activate the onClick function on click', () => {
-    //   startButton.simulate('click');
-    //   assert.isFunction(onStartStub);
-    // });
+    it('should activate the onClick function on click', () => {
+      assert.isFunction(onClickStub);
+    });
   });
 });

@@ -16,7 +16,9 @@ export default class Application extends Component {
           <h2>Adventures in Space</h2>
         </section>
         <section className="buttonContainer">
-          <Button className="start-button" handleClick={(e) => this.startStory(e)} text="Start"/>
+          <Button
+            className="start-button" handleClick={(e) => this.startStory(e)} text="Start"
+          />
         </section>
       </div>
     );

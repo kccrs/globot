@@ -6,8 +6,8 @@ export default class Text extends Component {
 
   textToSpeech(e) {
     e.preventDefault();
-    let pageId = this.props.textKey;
 
+    let pageId = this.props.textKey;
     let msg = new SpeechSynthesisUtterance(storyText[pageId].pageText);
 
     msg.rate = 0.9;
@@ -19,7 +19,7 @@ export default class Text extends Component {
 
     return (
       <section className="story">
-        <p>
+        <p className="story-body">
           {storyText[pageId].pageText}
         </p>
         <div className="read-aloud">

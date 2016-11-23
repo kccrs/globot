@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import storyText from '../content/storyText';
 
-export default class Image extends Component {
+export default class Image2 extends Component {
   render () {
     let pageId = this.props.textKey;
 
     return (
       <img
-        src={storyText[pageId].imageUrl} className={storyText[pageId].imageClassName} alt={storyText[pageId].imageAlt}
+        src={storyText[pageId].imageUrl2} className={storyText[pageId].imageClassName2} alt={storyText[pageId].imageAlt2}
       />
     );
   }

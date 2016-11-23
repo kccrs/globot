@@ -20,20 +20,20 @@ html {
 }
 
 h1 {
-  font-size: 60px;
+  @include font-size(60px);
   color: $color-space-medium;
-  font-family: $font-home-page-secondary;
+  font-family: $font-secondary;
   padding: 20px 0;
   text-align: center;
 }
 
 h2 {
-  font-size: 38px;
-  font-family: $font-home-page;
+  @include font-size(40px);
+  font-family: $font-main;
   letter-spacing: .1em;
+  margin-bottom: 10%;
   padding: 10px 0;
   text-align: center;
-  margin-bottom: 10%;
   @include breakpoint($large) {
     margin-bottom: 5%
   }
@@ -52,22 +52,19 @@ button {
   border-radius: 40px;
   border: none;
   color: $color-space;
-  font-family: $font-home-page-secondary;
+  font-family: $font-secondary;
   height: 50px;
   letter-spacing: .05em;
-
   &:hover {
     background-color: transparentize($color-space-light, .3);
     color: white;
   }
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include font-size(20px);
     height: 55px;
   }
   @include breakpoint($medium) {
     @include font-size(26px);
-  }
-  @include breakpoint($large) {
   }
 }
 

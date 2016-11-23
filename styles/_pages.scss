@@ -3,10 +3,10 @@
   @include push(1 of 12);
   height: 40vh;
   margin-top: 15%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(3 of 12);
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(3 of 12);
     height: 45vh;
   }
@@ -33,16 +33,16 @@
 
 // PAGE THREE
 .page3 {
-  background: no-repeat url('/../content/images/background/blue-space.jpg') center center fixed;
+  @include background-image('/../content/images/background/blue-space.jpg');
 }
 
 .friends {
-  margin-top: 5%;
   height: 35vh;
-  @include breakpoint($small) {
+  margin-top: 5%;
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(3 of 12);
   }
   @include breakpoint($medium) {
@@ -61,7 +61,7 @@
 // PAGE FOUR
 .power-down {
   @include push(3 of 12);
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(4 of 12);
   }
   @include breakpoint(550px) {
@@ -74,62 +74,47 @@
 
 // PAGE FIVE
 .page5 {
-  background: no-repeat url('/../content/images/background/disco-space2.png') center center fixed;
+  @include background-image('/../content/images/background/disco-space2.jpg');
 }
 
 .surprised-bot {
   @include push(4 of 12);
-  animation: infinite-spinning linear 4s infinite,
-  shrinking linear 10s infinite alternate;
+  animation:
+    infinite-spinning linear 4s infinite,
+    shrinking linear 10s infinite alternate;
   @include breakpoint($large) {
     margin-top: 12%;
   }
 }
 
 @keyframes infinite-spinning {
-  100% {
-    transform: rotate(360deg);
-  }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes shrinking {
-  0% {
-    width: 40%;
-  }
-  50% {
-    width: 5%;
-  }
-  100% {
-    width: 40%;
-  }
+  0%, 100% { width: 40%; }
+  50% { width: 5%; }
 }
 
 @include breakpoint($large) {
   @keyframes shrinking {
-    0% {
-      width: 30%;
-    }
-    50% {
-      width: 5%;
-    }
-    100% {
-      width: 30%;
-    }
+    0%, 100% { width: 30%; }
+    50% { width: 5%; }
   }
 }
 
 // PAGE SIX
 .page6 {
-  background: no-repeat url('/../content/images/background/saturn2.jpg') center center fixed;
+  @include background-image('/../content/images/background/saturn2.jpg');
 }
 
 .mystery-box {
   @include push(1 of 12);
   height: 24vh;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     height: 30vh;
   }
-  @include breakpoint(500px) {
+  @include breakpoint($small) {
     @include push(2 of 12);
     margin-top: 7%;
   }
@@ -167,9 +152,13 @@
 }
 
 // PAGE EIGHT
+.page8 {
+  @include background-image('/../content/images/background/purple-space.jpg');
+}
+
 .glogurt-factory {
   width: 90%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
   @include breakpoint($medium) {
@@ -181,9 +170,71 @@
 // PAGE NINE
 .uh-oh {
   width: 87%;
-  @include breakpoint($small) {
+  @include breakpoint($extra-small) {
     @include push(1 of 12);
   }
 }
 
 // PAGE TEN
+.professor {
+  margin-left: 20%;
+  margin-top: 3%;
+}
+
+// PAGE TWELVE
+.small-image {
+  margin: 5%;
+  margin-top: 10%;
+}
+
+.roller-bot {
+  margin-left: 20%;
+  animation: rolling linear 1s infinite,
+}
+
+@keyframes rolling {
+  0% { transform: translateX(-40px); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(-40px); }
+}
+
+.purple-robot {
+  animation: jumping linear 1s infinite;
+}
+
+@keyframes jumping {
+  0% { transform: translateY(-40px); }
+  50% { transform: translateY(40px); }
+  100% { transform: translateY(-40px); }
+}
+
+.globot {
+  animation: winning linear 4s infinite;
+}
+
+@keyframes winning {
+  0% { transform: rotateZ(90deg); }
+  25% { transform: rotateZ(-90deg); }
+  50% { transform: rotateZ(360deg); }
+  75% { transform: rotateZ(-360deg); }
+  100% { transform: rotateZ(-360deg); }
+}
+
+// PAGE FOURTEEN
+.globot-wins {
+  margin-left: 30%;
+}
+
+.vending-machine {
+  height: 30vh;
+}
+
+// PAGE FIFTEEN
+.globot-glows,
+.janky-robot {
+  height: 40vh;
+}
+
+.globot-glows {
+  margin-left: 25%;
+}

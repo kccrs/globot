@@ -1,8 +1,8 @@
 
 .StoryPage {
   @include full;
+  @include background-image('/../content/images/background/saturn.jpg');
   background-size: cover;
-  background: no-repeat url('/../content/images/background/saturn.jpg') center center fixed;
   height: 100vh;
   min-height: 100%;
   position: relative;
@@ -18,10 +18,10 @@
 
 footer {
   @include full;
-  position: absolute;
   bottom: 0;
   height: 80px;
   padding: 0 10px 10px;
+  position: absolute;
 }
 
 .first-choice-button,

@@ -18,11 +18,17 @@ describe('Button', () => {
     it('should have props for className and handleClick', () => {
       assert.isDefined(button.props('className'));
       assert.isDefined(button.props('handleClick'));
+      assert.isDefined(button.props('result'));
     });
 
     it('should activate the onClick function on click', () => {
       button.simulate('click');
       assert.isFunction(onClickStub);
     });
+
+    it('should display props.text in button', () => {
+      button.simulate('click');
+      assert.isDefined(button.props('text'))
+    })
   });
 });
