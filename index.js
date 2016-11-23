@@ -11,9 +11,9 @@ const Root = () =>  {
   return (
     <BrowserRouter>
       <div>
-        <Miss component={NotFound} />
         <Match exactly pattern="/" component={Application} />
         <Match pattern="/:pageId" component={StoryPage} />
+        <Miss component={NotFound} />
       </div>
     </BrowserRouter>
   )

@@ -25,12 +25,4 @@ describe('Application', () => {
       assert.isFunction(onClickStub);
     });
   });
-
-  context('mount tests', () => {
-    // const wrapper = mount(<Application />);
-    // const startButton = wrapper.find('button');
-    // const startStory = sinon.spy();
-
-
-  });
 });
