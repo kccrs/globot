@@ -1,7 +1,7 @@
 {
   "name": "GloBot",
   "version": "1.0.0",
-  "description": "An interactive, choose-your-own-adventure style children's book built with React and using text-to-speech technology.",
+  "description": "An interactive, choose-your-own-adventure style children's book built with React, CSS animation, text-to-speech technology.",
   "main": "index.js",
   "scripts": {
     "start": "node server",
