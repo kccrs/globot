@@ -8211,8 +8211,8 @@
 	    _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_reactRouter.Match, { exactly: true, pattern: '/', component: _Application2.default }),
-	      _react2.default.createElement(_reactRouter.Match, { pattern: '/:pageId', component: _StoryPage2.default }),
+	      _react2.default.createElement(_reactRouter.Match, { exactly: true, pattern: '/globot/', component: _Application2.default }),
+	      _react2.default.createElement(_reactRouter.Match, { pattern: '/globot/:pageId', component: _StoryPage2.default }),
 	      _react2.default.createElement(_reactRouter.Miss, { component: _NotFound2.default })
 	    )
 	  );
@@ -33465,6 +33465,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page8: {
 	    pageText: '"There it is!  Shoot, it seems to be locked! It doesn\'t look like anyone is in there. What do you think?  Should we try to break in?"',
 	    imageUrl: '../content/images/glogurt-factory.svg',
@@ -33481,6 +33482,7 @@
 	      result: 'page10'
 	    }
 	  },
+
 	  page9: {
 	    pageText: 'Busted!  Janky and GloBot are arrested by a GloGurt factory security guard.  THE END.',
 	    imageUrl: '../content/images/uh-oh.svg',
@@ -33493,6 +33495,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page10: {
 	    pageText: '"Oh, hello! Who are you?" asked Janky.  "I am Professor Dinklebottom and I used to run this factory.  I am the inventor of GloGurt." "Oh we are so happy you are here, we are looking for GloGurt!" exclaimed GloBot. "Well, unfortunately for you I was fired." "Fired? But you invented GloGurt, why would they fire you?" asked GloBot. "They didn\'t like my latest flavor -- mustard and licorice." said Professor Dinklebottom.  Janky replied, "I can see why! That sounds terrible!"',
 	    imageUrl: '../content/images/dinklebottom.svg',
@@ -33507,6 +33510,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page11: {
 	    pageText: '"Everyone is allowed to have their own opinions, I happen to like mustard and licorice." "I\'m sorry Professor," GloBot said, "we did not mean to offend you. Do you happen to know where else we can find GloGurt?" "Well," the Professor replied, "there is a GloGurt vending machine at the Space Disco, but there is a dance contest going on now. Do you want to enter the dance contest?"',
 	    imageUrl: '../content/images/dinklebottom.svg',
@@ -33523,6 +33527,7 @@
 	      result: 'page13'
 	    }
 	  },
+
 	  page12: {
 	    pageText: 'Dance! Dance! Dance!',
 	    imageUrl: '../content/images/roller-bot.svg',
@@ -33543,6 +33548,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page13: {
 	    pageText: 'Well that is boring.  I guess just go home as dancing is the only way to get GloGurt. THE END',
 	    imageUrl: '../content/images/dinklebottom.svg',
@@ -33555,6 +33561,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page14: {
 	    pageText: 'And the winner is... GloBot! You have won the grand prize... a lifetime supply of GloGurt!',
 	    imageUrl: '../content/images/globot.svg',
@@ -33572,6 +33579,7 @@
 	      visible: 'hidden'
 	    }
 	  },
+
 	  page15: {
 	    pageText: '"Oh Janky, we did it!" exclaimed GloBot, "I couldn\'t have done it without you!" "That\'s what friends do, support each other. Now let\'s go home!" Janky replied. THE END.',
 	    imageUrl: '../content/images/globot-glows.svg',
